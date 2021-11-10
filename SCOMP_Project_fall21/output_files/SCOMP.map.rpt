@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Wed Nov 03 20:02:47 2021
+Tue Nov 09 19:10:42 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -62,15 +62,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Wed Nov 03 20:02:47 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 09 19:10:42 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,028                                       ;
-;     Total combinational functions  ; 892                                         ;
-;     Dedicated logic registers      ; 430                                         ;
-; Total registers                    ; 430                                         ;
+; Total logic elements               ; 1,026                                       ;
+;     Total combinational functions  ; 890                                         ;
+;     Dedicated logic registers      ; 429                                         ;
+; Total registers                    ; 429                                         ;
 ; Total pins                         ; 69                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 32,768                                      ;
@@ -181,51 +181,51 @@ https://fpgasoftware.intel.com/eula.
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.0%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
+;     Processor 2            ;   0.1%      ;
+;     Processor 3            ;   0.1%      ;
+;     Processor 4            ;   0.1%      ;
 +----------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                               ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                               ; Library ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------------------+---------+
-; i2c_master.vhd                   ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_master.vhd         ;         ;
-; i2c_ctrl.vhd                     ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_ctrl.vhd           ;         ;
-; HEX_DISP.vhd                     ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/HEX_DISP.vhd           ;         ;
-; DIG_OUT.vhd                      ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/DIG_OUT.vhd            ;         ;
-; DIG_IN.vhd                       ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/DIG_IN.vhd             ;         ;
-; clk_div.vhd                      ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/clk_div.vhd            ;         ;
-; TIMER.vhd                        ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd              ;         ;
-; IO_DECODER.vhd                   ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/IO_DECODER.vhd         ;         ;
-; SCOMP.vhd                        ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd              ;         ;
-; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File        ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP_System.bdf       ;         ;
-; PLL_main.vhd                     ; yes             ; User Wizard-Generated File               ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/PLL_main.vhd           ;         ;
-; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File        ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/HEX_DISP_6.bdf         ;         ;
-; NeoPixelController.vhd           ; yes             ; User VHDL File                           ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd ;         ;
-; altpll.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                          ;         ;
-; aglobal191.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                      ;         ;
-; stratix_pll.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                     ;         ;
-; stratixii_pll.inc                ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                   ;         ;
-; cycloneii_pll.inc                ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                   ;         ;
-; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction              ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/db/pll_main_altpll.v   ;         ;
-; altsyncram.tdf                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                      ;         ;
-; stratix_ram_block.inc            ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc               ;         ;
-; lpm_mux.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                         ;         ;
-; lpm_decode.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                      ;         ;
-; a_rdenreg.inc                    ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                       ;         ;
-; altrom.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                          ;         ;
-; altram.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                          ;         ;
-; altdpram.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                        ;         ;
-; db/altsyncram_5gr3.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/db/altsyncram_5gr3.tdf ;         ;
-; Flashy.mif                       ; yes             ; Auto-Found Memory Initialization File    ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/Flashy.mif             ;         ;
-; lpm_clshift.tdf                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                     ;         ;
-; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/db/lpm_clshift_fuc.tdf ;         ;
-; lpm_bustri.tdf                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                      ;         ;
-; i2c_interface.bdf                ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_interface.bdf      ;         ;
-+----------------------------------+-----------------+------------------------------------------+--------------------------------------------------------------------------------------------+---------+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                                ; File Name with Absolute Path                                                                            ; Library ;
++----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
+; i2c_master.vhd                   ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_master.vhd         ;         ;
+; i2c_ctrl.vhd                     ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_ctrl.vhd           ;         ;
+; HEX_DISP.vhd                     ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/HEX_DISP.vhd           ;         ;
+; DIG_OUT.vhd                      ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/DIG_OUT.vhd            ;         ;
+; DIG_IN.vhd                       ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/DIG_IN.vhd             ;         ;
+; clk_div.vhd                      ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/clk_div.vhd            ;         ;
+; TIMER.vhd                        ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd              ;         ;
+; IO_DECODER.vhd                   ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/IO_DECODER.vhd         ;         ;
+; SCOMP.vhd                        ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd              ;         ;
+; SCOMP_System.bdf                 ; yes             ; User Block Diagram/Schematic File        ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP_System.bdf       ;         ;
+; PLL_main.vhd                     ; yes             ; User Wizard-Generated File               ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/PLL_main.vhd           ;         ;
+; HEX_DISP_6.bdf                   ; yes             ; User Block Diagram/Schematic File        ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/HEX_DISP_6.bdf         ;         ;
+; NeoPixelController.vhd           ; yes             ; User VHDL File                           ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd ;         ;
+; altpll.tdf                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf                                       ;         ;
+; aglobal191.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/aglobal191.inc                                   ;         ;
+; stratix_pll.inc                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_pll.inc                                  ;         ;
+; stratixii_pll.inc                ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratixii_pll.inc                                ;         ;
+; cycloneii_pll.inc                ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/cycloneii_pll.inc                                ;         ;
+; db/pll_main_altpll.v             ; yes             ; Auto-Generated Megafunction              ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/db/pll_main_altpll.v   ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf                                   ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/stratix_ram_block.inc                            ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_mux.inc                                      ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_decode.inc                                   ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/a_rdenreg.inc                                    ;         ;
+; altrom.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altrom.inc                                       ;         ;
+; altram.inc                       ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altram.inc                                       ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altdpram.inc                                     ;         ;
+; db/altsyncram_5gr3.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/db/altsyncram_5gr3.tdf ;         ;
+; flashy.mif                       ; yes             ; Auto-Found Memory Initialization File    ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/flashy.mif             ;         ;
+; lpm_clshift.tdf                  ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf                                  ;         ;
+; db/lpm_clshift_fuc.tdf           ; yes             ; Auto-Generated Megafunction              ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/db/lpm_clshift_fuc.tdf ;         ;
+; lpm_bustri.tdf                   ; yes             ; Megafunction                             ; c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_bustri.tdf                                   ;         ;
+; i2c_interface.bdf                ; yes             ; Auto-Found Block Diagram/Schematic File  ; C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_interface.bdf      ;         ;
++----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------+
@@ -233,20 +233,20 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 ; Resource                                    ; Usage                                                                                  ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
-; Estimated Total logic elements              ; 1,028                                                                                  ;
+; Estimated Total logic elements              ; 1,026                                                                                  ;
 ;                                             ;                                                                                        ;
-; Total combinational functions               ; 892                                                                                    ;
+; Total combinational functions               ; 890                                                                                    ;
 ; Logic element usage by number of LUT inputs ;                                                                                        ;
 ;     -- 4 input functions                    ; 501                                                                                    ;
-;     -- 3 input functions                    ; 286                                                                                    ;
-;     -- <=2 input functions                  ; 105                                                                                    ;
+;     -- 3 input functions                    ; 285                                                                                    ;
+;     -- <=2 input functions                  ; 104                                                                                    ;
 ;                                             ;                                                                                        ;
 ; Logic elements by mode                      ;                                                                                        ;
-;     -- normal mode                          ; 816                                                                                    ;
-;     -- arithmetic mode                      ; 76                                                                                     ;
+;     -- normal mode                          ; 815                                                                                    ;
+;     -- arithmetic mode                      ; 75                                                                                     ;
 ;                                             ;                                                                                        ;
-; Total registers                             ; 430                                                                                    ;
-;     -- Dedicated logic registers            ; 430                                                                                    ;
+; Total registers                             ; 429                                                                                    ;
+;     -- Dedicated logic registers            ; 429                                                                                    ;
 ;     -- I/O registers                        ; 0                                                                                      ;
 ;                                             ;                                                                                        ;
 ; I/O pins                                    ; 69                                                                                     ;
@@ -258,8 +258,8 @@ https://fpgasoftware.intel.com/eula.
 ;     -- PLLs                                 ; 1                                                                                      ;
 ;                                             ;                                                                                        ;
 ; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
-; Maximum fan-out                             ; 254                                                                                    ;
-; Total fan-out                               ; 4675                                                                                   ;
+; Maximum fan-out                             ; 253                                                                                    ;
+; Total fan-out                               ; 4667                                                                                   ;
 ; Average fan-out                             ; 3.16                                                                                   ;
 +---------------------------------------------+----------------------------------------------------------------------------------------+
 
@@ -269,7 +269,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                     ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
-; |SCOMP_System                             ; 892 (5)             ; 430 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System       ; work         ;
+; |SCOMP_System                             ; 890 (5)             ; 429 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System       ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN             ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT            ; work         ;
 ;    |HEX_DISP_6:inst9|                     ; 45 (3)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                          ; HEX_DISP_6         ; work         ;
@@ -293,7 +293,7 @@ https://fpgasoftware.intel.com/eula.
 ;       |lpm_clshift:shifter|               ; 85 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift        ; work         ;
 ;          |lpm_clshift_fuc:auto_generated| ; 85 (85)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated             ; lpm_clshift_fuc    ; work         ;
 ;    |TIMER:inst4|                          ; 34 (34)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                               ; TIMER              ; work         ;
-;    |clk_div:inst5|                        ; 36 (36)             ; 29 (29)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                             ; clk_div            ; work         ;
+;    |clk_div:inst5|                        ; 34 (34)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                             ; clk_div            ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
@@ -433,8 +433,8 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 430   ;
-; Number of registers using Synchronous Clear  ; 25    ;
+; Total registers                              ; 429   ;
+; Number of registers using Synchronous Clear  ; 24    ;
 ; Number of registers using Synchronous Load   ; 0     ;
 ; Number of registers using Asynchronous Clear ; 160   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
@@ -471,11 +471,11 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[7][7]                         ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|addr_rw[1]   ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|tx_byte[1]   ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[7][5]                         ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|addr_rw[7]   ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|tx_byte[0]   ;
 ; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[4]                                  ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[1]   ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[0]   ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[15] ;
 ; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[7]  ;
 ; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[10]                                 ;
@@ -1029,28 +1029,28 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 69                          ;
-; cycloneiii_ff         ; 430                         ;
+; cycloneiii_ff         ; 429                         ;
 ;     CLR               ; 149                         ;
 ;     ENA               ; 206                         ;
 ;     ENA CLR           ; 11                          ;
-;     SCLR              ; 25                          ;
+;     SCLR              ; 24                          ;
 ;     plain             ; 39                          ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 899                         ;
-;     arith             ; 76                          ;
-;         2 data inputs ; 56                          ;
+; cycloneiii_lcell_comb ; 897                         ;
+;     arith             ; 75                          ;
+;         2 data inputs ; 55                          ;
 ;         3 data inputs ; 20                          ;
-;     normal            ; 823                         ;
+;     normal            ; 822                         ;
 ;         0 data inputs ; 1                           ;
 ;         1 data inputs ; 15                          ;
 ;         2 data inputs ; 40                          ;
-;         3 data inputs ; 266                         ;
+;         3 data inputs ; 265                         ;
 ;         4 data inputs ; 501                         ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 11.00                       ;
-; Average LUT depth     ; 4.23                        ;
+; Average LUT depth     ; 4.26                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1069,53 +1069,53 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Wed Nov 03 20:02:35 2021
+    Info: Processing started: Tue Nov 09 19:10:30 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
-    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_master.vhd Line: 49
-    Info (12023): Found entity 1: i2c_master File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_master.vhd Line: 31
+    Info (12022): Found design unit 1: i2c_master-logic File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_master.vhd Line: 49
+    Info (12023): Found entity 1: i2c_master File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_master.vhd Line: 31
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_ctrl.vhd
-    Info (12022): Found design unit 1: i2c_ctrl-main File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_ctrl.vhd Line: 32
-    Info (12023): Found entity 1: i2c_ctrl File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/i2c_ctrl.vhd Line: 11
+    Info (12022): Found design unit 1: i2c_ctrl-main File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_ctrl.vhd Line: 32
+    Info (12023): Found entity 1: i2c_ctrl File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/i2c_ctrl.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file hex_disp.vhd
-    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/HEX_DISP.vhd Line: 17
-    Info (12023): Found entity 1: HEX_DISP File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/HEX_DISP.vhd Line: 9
+    Info (12022): Found design unit 1: HEX_DISP-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/HEX_DISP.vhd Line: 17
+    Info (12023): Found entity 1: HEX_DISP File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/HEX_DISP.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file dig_out.vhd
-    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/DIG_OUT.vhd Line: 26
-    Info (12023): Found entity 1: DIG_OUT File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/DIG_OUT.vhd Line: 16
+    Info (12022): Found design unit 1: DIG_OUT-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/DIG_OUT.vhd Line: 26
+    Info (12023): Found entity 1: DIG_OUT File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/DIG_OUT.vhd Line: 16
 Info (12021): Found 2 design units, including 1 entities, in source file dig_in.vhd
-    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/DIG_IN.vhd Line: 19
-    Info (12023): Found entity 1: DIG_IN File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/DIG_IN.vhd Line: 10
+    Info (12022): Found design unit 1: DIG_IN-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/DIG_IN.vhd Line: 19
+    Info (12023): Found entity 1: DIG_IN File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/DIG_IN.vhd Line: 10
 Info (12021): Found 2 design units, including 1 entities, in source file clk_div.vhd
-    Info (12022): Found design unit 1: clk_div-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/clk_div.vhd Line: 26
-    Info (12023): Found entity 1: clk_div File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/clk_div.vhd Line: 11
+    Info (12022): Found design unit 1: clk_div-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/clk_div.vhd Line: 26
+    Info (12023): Found entity 1: clk_div File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/clk_div.vhd Line: 11
 Info (12021): Found 2 design units, including 1 entities, in source file timer.vhd
-    Info (12022): Found design unit 1: TIMER-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 27
-    Info (12023): Found entity 1: TIMER File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 17
+    Info (12022): Found design unit 1: TIMER-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 27
+    Info (12023): Found entity 1: TIMER File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 17
 Info (12021): Found 2 design units, including 1 entities, in source file io_decoder.vhd
-    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/IO_DECODER.vhd Line: 28
-    Info (12023): Found entity 1: IO_DECODER File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/IO_DECODER.vhd Line: 9
+    Info (12022): Found design unit 1: IO_DECODER-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/IO_DECODER.vhd Line: 28
+    Info (12023): Found entity 1: IO_DECODER File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/IO_DECODER.vhd Line: 9
 Info (12021): Found 2 design units, including 1 entities, in source file scomp.vhd
-    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 33
-    Info (12023): Found entity 1: SCOMP File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 16
+    Info (12022): Found design unit 1: SCOMP-a File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 33
+    Info (12023): Found entity 1: SCOMP File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file scomp_system.bdf
     Info (12023): Found entity 1: SCOMP_System
 Info (12021): Found 2 design units, including 1 entities, in source file pll_main.vhd
-    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/PLL_main.vhd Line: 54
-    Info (12023): Found entity 1: PLL_main File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/PLL_main.vhd Line: 43
+    Info (12022): Found design unit 1: pll_main-SYN File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/PLL_main.vhd Line: 54
+    Info (12023): Found entity 1: PLL_main File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/PLL_main.vhd Line: 43
 Info (12021): Found 1 design units, including 1 entities, in source file hex_disp_6.bdf
     Info (12023): Found entity 1: HEX_DISP_6
 Info (12021): Found 2 design units, including 1 entities, in source file neopixelcontroller.vhd
-    Info (12022): Found design unit 1: NeoPixelController-internals File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 19
-    Info (12023): Found entity 1: NeoPixelController File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 7
+    Info (12022): Found design unit 1: NeoPixelController-internals File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 19
+    Info (12023): Found entity 1: NeoPixelController File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 7
 Info (12127): Elaborating entity "SCOMP_System" for the top level hierarchy
 Warning (275009): Pin "KEY1" not connected
 Info (12128): Elaborating entity "NeoPixelController" for hierarchy "NeoPixelController:inst16"
 Info (12128): Elaborating entity "PLL_main" for hierarchy "PLL_main:inst1"
-Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/PLL_main.vhd Line: 141
-Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/PLL_main.vhd Line: 141
-Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/PLL_main.vhd Line: 141
+Info (12128): Elaborating entity "altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/PLL_main.vhd Line: 141
+Info (12130): Elaborated megafunction instantiation "PLL_main:inst1|altpll:altpll_component" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/PLL_main.vhd Line: 141
+Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component" with the following parameter: File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/PLL_main.vhd Line: 141
     Info (12134): Parameter "bandwidth_type" = "AUTO"
     Info (12134): Parameter "clk0_divide_by" = "5"
     Info (12134): Parameter "clk0_duty_cycle" = "50"
@@ -1172,13 +1172,13 @@ Info (12133): Instantiated megafunction "PLL_main:inst1|altpll:altpll_component"
     Info (12134): Parameter "self_reset_on_loss_lock" = "OFF"
     Info (12134): Parameter "width_clock" = "5"
 Info (12021): Found 1 design units, including 1 entities, in source file db/pll_main_altpll.v
-    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/db/pll_main_altpll.v Line: 31
+    Info (12023): Found entity 1: PLL_main_altpll File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/db/pll_main_altpll.v Line: 31
 Info (12128): Elaborating entity "PLL_main_altpll" for hierarchy "PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altpll.tdf Line: 898
 Info (12128): Elaborating entity "IO_DECODER" for hierarchy "IO_DECODER:inst3"
 Info (12128): Elaborating entity "SCOMP" for hierarchy "SCOMP:inst"
-Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 61
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 61
-Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 61
+Info (12128): Elaborating entity "altsyncram" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 61
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|altsyncram:altsyncram_component" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 61
+Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_component" with the following parameter: File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 61
     Info (12134): Parameter "address_aclr_a" = "UNUSED"
     Info (12134): Parameter "address_aclr_b" = "NONE"
     Info (12134): Parameter "address_reg_b" = "CLOCK1"
@@ -1230,54 +1230,43 @@ Info (12133): Instantiated megafunction "SCOMP:inst|altsyncram:altsyncram_compon
     Info (12134): Parameter "lpm_hint" = "ENABLE_RUNTIME_MOD=NO"
     Info (12134): Parameter "lpm_type" = "altsyncram"
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_5gr3.tdf
-    Info (12023): Found entity 1: altsyncram_5gr3 File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/db/altsyncram_5gr3.tdf Line: 28
+    Info (12023): Found entity 1: altsyncram_5gr3 File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/db/altsyncram_5gr3.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_5gr3" for hierarchy "SCOMP:inst|altsyncram:altsyncram_component|altsyncram_5gr3:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113031): 167 out of 2048 addresses are reinitialized. The latest initialized data will replace the existing data. There are 167 warnings found, and 10 warnings are reported. File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/Flashy.mif Line: 1
-    Warning (113030): Memory Initialization File address 0 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 13
-    Warning (113030): Memory Initialization File address 1 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 14
-    Warning (113030): Memory Initialization File address 2 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 15
-    Warning (113030): Memory Initialization File address 3 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 16
-    Warning (113030): Memory Initialization File address 4 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 17
-    Warning (113030): Memory Initialization File address 5 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 18
-    Warning (113030): Memory Initialization File address 6 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 19
-    Warning (113030): Memory Initialization File address 7 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 20
-    Warning (113030): Memory Initialization File address 8 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 21
-    Warning (113030): Memory Initialization File address 9 is reinitialized File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/ Line: 22
-Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 88
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 88
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 88
+Info (12128): Elaborating entity "LPM_CLSHIFT" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 88
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_CLSHIFT:shifter" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 88
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_CLSHIFT:shifter" with the following parameter: File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 88
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_WIDTHDIST" = "4"
     Info (12134): Parameter "LPM_SHIFTTYPE" = "arithmetic"
     Info (12134): Parameter "LPM_TYPE" = "LPM_CLSHIFT"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_clshift_fuc.tdf
-    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/db/lpm_clshift_fuc.tdf Line: 23
+    Info (12023): Found entity 1: lpm_clshift_fuc File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/db/lpm_clshift_fuc.tdf Line: 23
 Info (12128): Elaborating entity "lpm_clshift_fuc" for hierarchy "SCOMP:inst|LPM_CLSHIFT:shifter|lpm_clshift_fuc:auto_generated" File: c:/intelfpga_lite/19.1/quartus/libraries/megafunctions/lpm_clshift.tdf Line: 54
-Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 115
-Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 115
-Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/SCOMP.vhd Line: 115
+Info (12128): Elaborating entity "LPM_BUSTRI" for hierarchy "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 115
+Info (12130): Elaborated megafunction instantiation "SCOMP:inst|LPM_BUSTRI:io_bus" File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 115
+Info (12133): Instantiated megafunction "SCOMP:inst|LPM_BUSTRI:io_bus" with the following parameter: File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP.vhd Line: 115
     Info (12134): Parameter "LPM_WIDTH" = "16"
     Info (12134): Parameter "LPM_TYPE" = "LPM_BUSTRI"
     Info (12134): Parameter "LPM_HINT" = "UNUSED"
 Info (12128): Elaborating entity "TIMER" for hierarchy "TIMER:inst4"
-Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[0]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[1]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[2]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[3]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[4]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[5]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[6]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[7]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[8]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[9]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[10]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[11]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[12]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[13]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
-Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(59) File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Warning (10631): VHDL Process Statement warning at TIMER.vhd(59): inferring latch(es) for signal or variable "IO_COUNT", which holds its previous value in one or more paths through the process File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[0]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[1]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[2]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[3]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[4]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[5]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[6]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[7]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[8]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[9]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[10]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[11]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[12]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[13]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[14]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
+Info (10041): Inferred latch for "IO_COUNT[15]" at TIMER.vhd(59) File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/TIMER.vhd Line: 59
 Info (12128): Elaborating entity "clk_div" for hierarchy "clk_div:inst5"
 Info (12128): Elaborating entity "DIG_IN" for hierarchy "DIG_IN:inst7"
 Warning (12125): Using design file i2c_interface.bdf, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
@@ -1305,38 +1294,38 @@ Warning (13046): Tri-state node(s) do not directly drive top-level pin(s)
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst14|inst1[13]" to the node "NeoPixelController:inst16|led_buffer[13]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst14|inst1[14]" to the node "NeoPixelController:inst16|led_buffer[14]" into an OR gate
     Warning (13047): Converted the fan-out from the tri-state buffer "I2C_INTERFACE:inst14|inst1[15]" to the node "NeoPixelController:inst16|led_buffer[15]" into an OR gate
-Info (13000): Registers with preset signals will power-up high File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+Info (13000): Registers with preset signals will power-up high File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
 Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
 Warning (13024): Output pins are stuck at VCC or GND
     Warning (13410): Pin "I2CEN" is stuck at VCC
 Info (286030): Timing-Driven Synthesis is running
 Critical Warning (18061): Ignored Power-Up Level option on the following registers
-    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[9] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[8] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[7] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[6] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[5] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[3] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[4] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[2] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[1] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
-    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[0] will power up to High File: C:/Users/Oankar Patil/Documents/ECE_2031_/Labs/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[9] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[8] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[7] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[6] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[5] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|reset_count[3] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[4] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[2] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[1] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
+    Critical Warning (18010): Register NeoPixelController:inst16|bit_count[0] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 43
 Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY1"
-Info (21057): Implemented 1152 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1150 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 54 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1066 logic cells
+    Info (21061): Implemented 1064 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 46 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 35 warnings
     Info: Peak virtual memory: 4808 megabytes
-    Info: Processing ended: Wed Nov 03 20:02:47 2021
+    Info: Processing ended: Tue Nov 09 19:10:42 2021
     Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+    Info: Total CPU time (on all processors): 00:00:28
 
 
