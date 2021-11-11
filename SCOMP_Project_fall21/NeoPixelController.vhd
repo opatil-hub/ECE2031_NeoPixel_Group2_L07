@@ -19,7 +19,8 @@ end entity;
 architecture internals of NeoPixelController is
 
 	-- Signal to store the pixel's color data
-	signal led_buffer : std_logic_vector(23 downto 0);
+	signal led_buffer : std_logic_vector(71 downto 0);
+	signal led_color : std_logic_vector(23 downto 0); 
 	
 	
 begin
@@ -32,19 +33,19 @@ begin
 		constant t0l : integer := 9;
 
 		-- which bit in the 24 bits is being sent
-		variable bit_count   : integer range 0 to 23;
+		variable bit_count   : integer range 0 to 71;
 		-- counter to count through the bit encoding
 		variable enc_count   : integer range 0 to 31;
 		-- counter for the reset pulse
-		variable reset_count : integer range 0 to 1000;
+		variable reset_count : integer range 0 to 10000000;
 		
 		
 	begin
 		if resetn = '0' then
 			-- reset all counters
-			bit_count := 23;
+			bit_count := 71;
 			enc_count := 0;
-			reset_count := 1000;
+			reset_count := 10000000;
 			-- set sda inactive
 			sda <= '0';
 
@@ -53,7 +54,7 @@ begin
 			-- This IF block controls the various counters
 			if reset_count > 0 then
 				-- during reset period, ensure other counters are reset
-				bit_count := 23;
+				bit_count := 71;
 				enc_count := 0;
 				-- decrement the reset count
 				reset_count := reset_count - 1;
@@ -65,7 +66,7 @@ begin
 						enc_count := 0;
 						if bit_count = 0 then -- is end of the LED's data?
 							-- begin the reset period
-							reset_count := 1000;
+							reset_count := 10000000;
 						else
 							-- if not end of data, decrement count
 							bit_count := bit_count - 1;
@@ -79,7 +80,7 @@ begin
 						enc_count := 0;
 						if bit_count = 0 then -- is end of the LED's data?
 							-- begin the reset period
-							reset_count := 1000;
+							reset_count := 1000000;
 						else
 							bit_count := bit_count - 1;
 						end if;
@@ -108,12 +109,22 @@ begin
 	end process;
 	
 	-- Process to handle OUTs from SCOMP
+	
 	process(latch)
+	
+	
+
 	begin
 		if rising_edge(latch) then
 			-- Convert RGB 565 to Neopixel format,
 			-- in this case just padding with 0s.
-			led_buffer <= data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
+			
+			--led_buffer <=  data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" & data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
+			led_color<=data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
+			led_buffer<=led_color & led_color & led_color;
+			--For i in 0 to 1 loop
+			--	led_buffer<=led_buffer & led_color;
+			--end loop;
 		end if;
 	end process;
 
