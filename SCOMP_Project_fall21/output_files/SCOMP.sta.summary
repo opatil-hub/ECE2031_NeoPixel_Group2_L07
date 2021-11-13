@@ -3,38 +3,38 @@ Timing Analyzer Summary
 ------------------------------------------------------------
 
 Type  : Slow 1200mV 85C Model Setup 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -11.173
-TNS   : -280.867
+Slack : -9.618
+TNS   : -140.172
 
 Type  : Slow 1200mV 85C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -8.133
-TNS   : -555.761
+Slack : -7.004
+TNS   : -384.056
 
 Type  : Slow 1200mV 85C Model Setup 'clk_div:inst5|clock_100kHz'
-Slack : -5.825
-TNS   : -198.635
+Slack : -5.208
+TNS   : -178.237
 
 Type  : Slow 1200mV 85C Model Setup 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
-Slack : -4.276
-TNS   : -109.227
+Slack : -4.425
+TNS   : -138.912
 
 Type  : Slow 1200mV 85C Model Setup 'clk_div:inst5|clock_32Hz'
-Slack : -1.812
-TNS   : -19.453
+Slack : -1.655
+TNS   : -17.188
 
 Type  : Slow 1200mV 85C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : 0.212
-TNS   : 0.000
+Slack : -0.048
+TNS   : -0.077
 
 Type  : Slow 1200mV 85C Model Hold 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.272
-TNS   : 0.000
-
-Type  : Slow 1200mV 85C Model Hold 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
-Slack : 0.341
+Slack : 0.270
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Hold 'clk_div:inst5|clock_100kHz'
+Slack : 0.340
+TNS   : 0.000
+
+Type  : Slow 1200mV 85C Model Hold 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
 Slack : 0.341
 TNS   : 0.000
 
@@ -43,24 +43,24 @@ Slack : 0.355
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Recovery 'clk_div:inst5|clock_32Hz'
-Slack : -3.971
-TNS   : -62.681
+Slack : -4.674
+TNS   : -74.784
 
 Type  : Slow 1200mV 85C Model Recovery 'SCOMP:inst|IO_CYCLE'
-Slack : -0.006
-TNS   : -0.006
+Slack : -0.057
+TNS   : -0.057
 
 Type  : Slow 1200mV 85C Model Removal 'SCOMP:inst|IO_CYCLE'
-Slack : 0.311
+Slack : 0.367
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Removal 'clk_div:inst5|clock_32Hz'
-Slack : 3.431
+Slack : 3.818
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
 Slack : -1.403
-TNS   : -145.912
+TNS   : -101.016
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
 Slack : -1.403
@@ -79,43 +79,43 @@ Slack : 9.844
 TNS   : 0.000
 
 Type  : Slow 1200mV 85C Model Minimum Pulse Width 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 49.681
+Slack : 49.684
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Setup 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -9.906
-TNS   : -248.479
+Slack : -8.643
+TNS   : -124.631
 
 Type  : Slow 1200mV 0C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -7.661
-TNS   : -513.189
+Slack : -6.518
+TNS   : -354.550
 
 Type  : Slow 1200mV 0C Model Setup 'clk_div:inst5|clock_100kHz'
-Slack : -5.378
-TNS   : -183.705
+Slack : -4.780
+TNS   : -163.223
 
 Type  : Slow 1200mV 0C Model Setup 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
-Slack : -3.794
-TNS   : -97.576
+Slack : -4.025
+TNS   : -126.652
 
 Type  : Slow 1200mV 0C Model Setup 'clk_div:inst5|clock_32Hz'
-Slack : -1.525
-TNS   : -16.050
+Slack : -1.387
+TNS   : -14.076
 
 Type  : Slow 1200mV 0C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : -0.004
-TNS   : -0.005
+Slack : -0.230
+TNS   : -0.804
 
 Type  : Slow 1200mV 0C Model Hold 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.231
+Slack : 0.226
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
-Slack : 0.306
+Slack : 0.291
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_div:inst5|clock_100kHz'
-Slack : 0.306
+Slack : 0.305
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Hold 'clk_div:inst5|clock_32Hz'
@@ -123,24 +123,24 @@ Slack : 0.322
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Recovery 'clk_div:inst5|clock_32Hz'
-Slack : -3.945
-TNS   : -62.370
+Slack : -4.627
+TNS   : -74.032
 
 Type  : Slow 1200mV 0C Model Recovery 'SCOMP:inst|IO_CYCLE'
-Slack : 0.199
+Slack : 0.159
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'SCOMP:inst|IO_CYCLE'
-Slack : 0.152
+Slack : 0.207
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Removal 'clk_div:inst5|clock_32Hz'
-Slack : 3.281
+Slack : 3.624
 TNS   : 0.000
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
 Slack : -1.403
-TNS   : -145.921
+TNS   : -101.016
 
 Type  : Slow 1200mV 0C Model Minimum Pulse Width 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
 Slack : -1.403
@@ -163,35 +163,35 @@ Slack : 49.700
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Setup 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : -4.749
-TNS   : -114.038
+Slack : -3.799
+TNS   : -56.033
 
 Type  : Fast 1200mV 0C Model Setup 'SCOMP:inst|IO_CYCLE'
-Slack : -3.257
-TNS   : -213.853
+Slack : -2.963
+TNS   : -145.739
 
 Type  : Fast 1200mV 0C Model Setup 'clk_div:inst5|clock_100kHz'
-Slack : -1.874
-TNS   : -55.875
+Slack : -1.618
+TNS   : -46.823
 
 Type  : Fast 1200mV 0C Model Setup 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
-Slack : -1.245
-TNS   : -23.262
+Slack : -1.363
+TNS   : -37.499
 
 Type  : Fast 1200mV 0C Model Setup 'clk_div:inst5|clock_32Hz'
-Slack : -0.131
-TNS   : -0.351
+Slack : -0.056
+TNS   : -0.066
 
 Type  : Fast 1200mV 0C Model Hold 'SCOMP:inst|IO_CYCLE'
-Slack : 0.103
-TNS   : 0.000
+Slack : -0.148
+TNS   : -0.148
 
 Type  : Fast 1200mV 0C Model Hold 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 0.133
+Slack : 0.130
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
-Slack : 0.147
+Slack : 0.134
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Hold 'clk_div:inst5|clock_100kHz'
@@ -203,24 +203,24 @@ Slack : 0.152
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Recovery 'clk_div:inst5|clock_32Hz'
-Slack : -1.504
-TNS   : -23.584
+Slack : -1.639
+TNS   : -26.224
 
 Type  : Fast 1200mV 0C Model Recovery 'SCOMP:inst|IO_CYCLE'
-Slack : 0.214
+Slack : 0.207
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'SCOMP:inst|IO_CYCLE'
-Slack : 0.367
+Slack : 0.389
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Removal 'clk_div:inst5|clock_32Hz'
-Slack : 1.249
+Slack : 1.418
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'SCOMP:inst|IO_CYCLE'
 Slack : -1.000
-TNS   : -104.000
+TNS   : -72.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'I2C_INTERFACE:inst14|i2c_master:inst|data_clk'
 Slack : -1.000
@@ -239,7 +239,7 @@ Slack : 9.532
 TNS   : 0.000
 
 Type  : Fast 1200mV 0C Model Minimum Pulse Width 'inst1|altpll_component|auto_generated|pll1|clk[0]'
-Slack : 49.713
+Slack : 49.712
 TNS   : 0.000
 
 ------------------------------------------------------------

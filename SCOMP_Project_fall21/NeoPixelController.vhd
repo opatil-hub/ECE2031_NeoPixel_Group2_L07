@@ -4,8 +4,8 @@ library ieee;
 use ieee.std_logic_1164.all;
 use ieee.numeric_std.all; 
 
-entity NeoPixelController is
-
+	entity NeoPixelController is
+	
 	port(
 		clk_10M  : in   std_logic;
 		resetn   : in   std_logic;
@@ -17,10 +17,14 @@ entity NeoPixelController is
 end entity;
 
 architecture internals of NeoPixelController is
+	--shared variable buffer_bits: integer := 23;
+	--shared variable hold_bits : integer := 23;
 
 	-- Signal to store the pixel's color data
-	signal led_buffer : std_logic_vector(71 downto 0);
-	signal led_color : std_logic_vector(23 downto 0); 
+	-- signal led_buffer : std_logic_vector(buffer_bits downto 0);
+	signal led_color : std_logic_vector(23 downto 0);
+	signal led_buffer : std_logic_vector(6144 downto 0);
+	signal led_hold : unsigned(6144 downto 0);
 	
 	
 begin
@@ -111,8 +115,6 @@ begin
 	-- Process to handle OUTs from SCOMP
 	
 	process(latch)
-	
-	
 
 	begin
 		if rising_edge(latch) then
@@ -121,10 +123,11 @@ begin
 			
 			--led_buffer <=  data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" & data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
 			led_color<=data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
-			led_buffer<=led_color & led_color & led_color;
-			--For i in 0 to 1 loop
-			--	led_buffer<=led_buffer & led_color;
-			--end loop;
+			--led_buffer<=led_color & led_color & led_color;
+			For i in 0 to 1 loop
+				led_hold <= shift_left(unsigned(led_buffer), 24);
+				led_buffer<= std_logic_vector(led_hold) and led_color;
+			end loop;
 		end if;
 	end process;
 
