@@ -22,9 +22,10 @@ architecture internals of NeoPixelController is
 
 	-- Signal to store the pixel's color data
 	-- signal led_buffer : std_logic_vector(buffer_bits downto 0);
-	signal led_color : std_logic_vector(23 downto 0);
-	signal led_buffer : std_logic_vector(6144 downto 0);
-	signal led_hold : unsigned(6144 downto 0);
+	signal led_color : std_logic_vector(23 downto 0) := (others => '0');
+	signal led_buffer : std_logic_vector(6144 downto 0) := (others => '0');
+	signal led_hold : unsigned(6144 downto 0) := (others => '0');
+	signal zero : std_logic_vector(6144 downto 0) :=(others => '0');
 	
 	
 begin
@@ -37,7 +38,7 @@ begin
 		constant t0l : integer := 9;
 
 		-- which bit in the 24 bits is being sent
-		variable bit_count   : integer range 0 to 71;
+		variable bit_count   : integer range 0 to 6144;
 		-- counter to count through the bit encoding
 		variable enc_count   : integer range 0 to 31;
 		-- counter for the reset pulse
@@ -47,7 +48,7 @@ begin
 	begin
 		if resetn = '0' then
 			-- reset all counters
-			bit_count := 71;
+			bit_count := 6144;
 			enc_count := 0;
 			reset_count := 10000000;
 			-- set sda inactive
@@ -58,7 +59,7 @@ begin
 			-- This IF block controls the various counters
 			if reset_count > 0 then
 				-- during reset period, ensure other counters are reset
-				bit_count := 71;
+				bit_count := 6144;
 				enc_count := 0;
 				-- decrement the reset count
 				reset_count := reset_count - 1;
@@ -115,19 +116,23 @@ begin
 	-- Process to handle OUTs from SCOMP
 	
 	process(latch)
-
+		
 	begin
 		if rising_edge(latch) then
 			-- Convert RGB 565 to Neopixel format,
 			-- in this case just padding with 0s.
-			
+			led_buffer<= zero;
+			--led_hold<= zero;
 			--led_buffer <=  data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" & data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
 			led_color<=data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
 			--led_buffer<=led_color & led_color & led_color;
-			For i in 0 to 1 loop
+			--For i in 0 to 1 loop
+			--if counter<inputshiftamount
 				led_hold <= shift_left(unsigned(led_buffer), 24);
-				led_buffer<= std_logic_vector(led_hold) and led_color;
-			end loop;
+				led_buffer<= std_logic_vector(led_hold) or led_color;
+				
+				--led_buffer<= led_color;
+			--end loop;
 		end if;
 	end process;
 

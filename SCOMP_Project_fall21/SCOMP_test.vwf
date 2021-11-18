@@ -1,16 +1,16 @@
 /*<simulation_settings>
-<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP_bare -c SCOMP_bare --vector_source="F:/QuartusWork/SCOMP/SCOMP_test.vwf" --testbench_file="F:/QuartusWork/SCOMP/simulation/qsim/SCOMP_test.vwf.vht"</ftestbench_cmd>
-<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP_bare -c SCOMP_bare --vector_source="F:/QuartusWork/SCOMP/SCOMP_test.vwf" --testbench_file="F:/QuartusWork/SCOMP/simulation/qsim/SCOMP_test.vwf.vht"</ttestbench_cmd>
-<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="F:/QuartusWork/SCOMP/simulation/qsim/" SCOMP_bare -c SCOMP_bare</fnetlist_cmd>
-<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="F:/QuartusWork/SCOMP/simulation/qsim/" SCOMP_bare -c SCOMP_bare</tnetlist_cmd>
+<ftestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP -c SCOMP --vector_source="C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP_test.vwf" --testbench_file="C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/simulation/qsim/SCOMP_test.vwf.vht"</ftestbench_cmd>
+<ttestbench_cmd>quartus_eda --gen_testbench --tool=modelsim_oem --format=vhdl --write_settings_files=off SCOMP -c SCOMP --vector_source="C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/SCOMP_test.vwf" --testbench_file="C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/simulation/qsim/SCOMP_test.vwf.vht"</ttestbench_cmd>
+<fnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=on --flatten_buses=off --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/simulation/qsim/" SCOMP -c SCOMP</fnetlist_cmd>
+<tnetlist_cmd>quartus_eda --write_settings_files=off --simulation --functional=off --flatten_buses=off --timescale=1ps --tool=modelsim_oem --format=vhdl --output_directory="C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/simulation/qsim/" SCOMP -c SCOMP</tnetlist_cmd>
 <modelsim_script>onerror {exit -code 1}
 vlib work
-vcom -work work SCOMP_bare.vho
+vcom -work work SCOMP.vho
 vcom -work work SCOMP_test.vwf.vht
-vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.SCOMP_vhd_vec_tst
-vcd file -direction SCOMP_bare.msim.vcd
-vcd add -internal SCOMP_vhd_vec_tst/*
-vcd add -internal SCOMP_vhd_vec_tst/i1/*
+vsim -novopt -c -t 1ps -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.SCOMP_System_vhd_vec_tst
+vcd file -direction SCOMP.msim.vcd
+vcd add -internal SCOMP_System_vhd_vec_tst/*
+vcd add -internal SCOMP_System_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -20,16 +20,15 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script>
 <modelsim_script_timing>onerror {exit -code 1}
 vlib work
-vcom -work work SCOMP_bare.vho
+vcom -work work SCOMP.vho
 vcom -work work SCOMP_test.vwf.vht
-vsim -novopt -c -t 1ps -sdfmax SCOMP_vhd_vec_tst/i1=SCOMP_bare_vhd.sdo -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.SCOMP_vhd_vec_tst
-vcd file -direction SCOMP_bare.msim.vcd
-vcd add -internal SCOMP_vhd_vec_tst/*
-vcd add -internal SCOMP_vhd_vec_tst/i1/*
+vsim -novopt -c -t 1ps -sdfmax SCOMP_System_vhd_vec_tst/i1=SCOMP_vhd.sdo -L fiftyfivenm -L altera -L altera_mf -L 220model -L sgate -L altera_lnsim work.SCOMP_System_vhd_vec_tst
+vcd file -direction SCOMP.msim.vcd
+vcd add -internal SCOMP_System_vhd_vec_tst/*
+vcd add -internal SCOMP_System_vhd_vec_tst/i1/*
 proc simTimestamp {} {
     echo "Simulation time: $::now ps"
     if { [string equal running [runStatus]] } {
@@ -39,7 +38,6 @@ proc simTimestamp {} {
 after 2500 simTimestamp
 run -all
 quit -f
-
 </modelsim_script_timing>
 <hdl_lang>vhdl</hdl_lang>
 </simulation_settings>*/
@@ -868,6 +866,16 @@ SIGNAL("MW")
 	PARENT = "";
 }
 
+SIGNAL("SDA")
+{
+	VALUE_TYPE = NINE_LEVEL_BIT;
+	SIGNAL_TYPE = SINGLE_BIT;
+	WIDTH = 1;
+	LSB_INDEX = -1;
+	DIRECTION = OUTPUT;
+	PARENT = "";
+}
+
 TRANSITION_LIST("dbg_AC[15]")
 {
 	NODE
@@ -1539,6 +1547,15 @@ TRANSITION_LIST("MW")
 	{
 		REPEAT = 1;
 		LEVEL U FOR 10000.0;
+	}
+}
+
+TRANSITION_LIST("SDA")
+{
+	NODE
+	{
+		REPEAT = 1;
+		LEVEL Z FOR 10000.0;
 	}
 }
 
@@ -2325,6 +2342,15 @@ DISPLAY_LINE
 	EXPAND_STATUS = COLLAPSED;
 	RADIX = Binary;
 	TREE_INDEX = 78;
+	TREE_LEVEL = 0;
+}
+
+DISPLAY_LINE
+{
+	CHANNEL = "SDA";
+	EXPAND_STATUS = COLLAPSED;
+	RADIX = Binary;
+	TREE_INDEX = 79;
 	TREE_LEVEL = 0;
 }
 ;
