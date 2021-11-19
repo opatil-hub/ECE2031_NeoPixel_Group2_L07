@@ -6,10 +6,17 @@ use ieee.numeric_std.all;
 
 	entity NeoPixelController is
 	
+	
 	port(
 		clk_10M  : in   std_logic;
 		resetn   : in   std_logic;
-		latch    : in   std_logic;
+		latch16    : in   std_logic;
+		latch24    : in   std_logic;
+		latchsingle : in std_logic;
+		shift_amount: in unsigned(15 downto 0);
+		Bdata     : in   std_logic_vector(15 downto 0);
+		Gdata     : in   std_logic_vector(15 downto 0);
+		Rdata     : in   std_logic_vector(15 downto 0);
 		data     : in   std_logic_vector(15 downto 0);
 		sda      : out  std_logic
 	); 
@@ -23,13 +30,15 @@ architecture internals of NeoPixelController is
 	-- Signal to store the pixel's color data
 	-- signal led_buffer : std_logic_vector(buffer_bits downto 0);
 	signal led_color : std_logic_vector(23 downto 0) := (others => '0');
-	signal led_buffer : std_logic_vector(6144 downto 0) := (others => '0');
-	signal led_hold : unsigned(6144 downto 0) := (others => '0');
-	signal zero : std_logic_vector(6144 downto 0) :=(others => '0');
+	signal led_buffer : std_logic_vector(71 downto 0) := (others => '0');
+	signal led_hold : unsigned(71 downto 0) := (others => '0');
+	signal zero : std_logic_vector(71 downto 0) :=(others => '0');
+	signal shift_amount_int :integer;
+	--shared variable shiftAmount : Integer :=1;
 	
 	
 begin
-
+	shift_amount_int<= to_integer(shift_amount);
 	process (clk_10M, resetn)
 		-- protocol timing values (in 100s of ns)
 		constant t1h : integer := 8;
@@ -38,7 +47,7 @@ begin
 		constant t0l : integer := 9;
 
 		-- which bit in the 24 bits is being sent
-		variable bit_count   : integer range 0 to 6144;
+		variable bit_count   : integer range 0 to 71;
 		-- counter to count through the bit encoding
 		variable enc_count   : integer range 0 to 31;
 		-- counter for the reset pulse
@@ -48,7 +57,7 @@ begin
 	begin
 		if resetn = '0' then
 			-- reset all counters
-			bit_count := 6144;
+			bit_count := 71;
 			enc_count := 0;
 			reset_count := 10000000;
 			-- set sda inactive
@@ -59,7 +68,7 @@ begin
 			-- This IF block controls the various counters
 			if reset_count > 0 then
 				-- during reset period, ensure other counters are reset
-				bit_count := 6144;
+				bit_count := 71;
 				enc_count := 0;
 				-- decrement the reset count
 				reset_count := reset_count - 1;
@@ -115,24 +124,30 @@ begin
 	
 	-- Process to handle OUTs from SCOMP
 	
-	process(latch)
-		
+	process(latch16)
+	--variable counter : Integer:=0;
+	 
 	begin
-		if rising_edge(latch) then
+		if rising_edge(latch16) then
 			-- Convert RGB 565 to Neopixel format,
 			-- in this case just padding with 0s.
-			led_buffer<= zero;
+			--led_buffer<= zero;
 			--led_hold<= zero;
 			--led_buffer <=  data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" & data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
 			led_color<=data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
 			--led_buffer<=led_color & led_color & led_color;
 			--For i in 0 to 1 loop
 			--if counter<inputshiftamount
-				led_hold <= shift_left(unsigned(led_buffer), 24);
-				led_buffer<= std_logic_vector(led_hold) or led_color;
-				
+			--if counter< shiftAmount then
+				--led_hold <= shift_left(unsigned(led_buffer), 24);
+				--led_buffer<= std_logic_vector(led_hold) or led_color;
+			--if rising_edge(latchsingle) then
+				led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_color), 24*shift_amount_int));
+				--counter := counter +1;
+			--end if;
 				--led_buffer<= led_color;
 			--end loop;
+		--end if;
 		end if;
 	end process;
 

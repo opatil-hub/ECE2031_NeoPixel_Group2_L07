@@ -46,8 +46,10 @@ Start:
 	STORE OutColor
 	
 	; Send to the NeoPixel controller
-	OUT   NeoPixel
-	
+	OUT   NeoPixel16
+	in switches
+	shift -6
+	out	  NeoPixelsingle
 	JUMP  Start	
 
 OutColor:  DW 0
@@ -64,4 +66,6 @@ Hex1:      EQU &H005
 I2C_cmd:   EQU &H090
 I2C_data:  EQU &H091
 I2C_rdy:   EQU &H092
-NeoPixel:  EQU &H0A0
+NeoPixel16:  EQU &H0A0
+NeoPixel24:  EQU &H0A1
+NeoPixelsingle:  EQU &H0A2
