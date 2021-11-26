@@ -21,7 +21,9 @@ ENTITY IO_DECODER IS
     I2C_DATA_EN   : OUT STD_LOGIC;
     I2C_RDY_EN    : OUT STD_LOGIC;
     NeoPixel16      : OUT STD_LOGIC;
-	 NeoPixel24      : OUT STD_LOGIC;
+	 NeoPixelB      : OUT STD_LOGIC;
+	 NeoPixelG      : OUT STD_LOGIC;
+	 NeoPixelR      : OUT STD_LOGIC;
 	 NeoPixelsingle      : OUT STD_LOGIC
   );
 
@@ -44,6 +46,8 @@ begin
   I2C_DATA_EN  <= '1' WHEN (ADDR_INT = 16#091#) and (IO_CYCLE = '1') ELSE '0';
   I2C_RDY_EN   <= '1' WHEN (ADDR_INT = 16#092#) and (IO_CYCLE = '1') ELSE '0';
   NeoPixel16     <= '1' WHEN (ADDR_INT = 16#0A0#) and (IO_CYCLE = '1') ELSE '0';
-  NeoPixel24     <= '1' WHEN (ADDR_INT = 16#0A1#) and (IO_CYCLE = '1') ELSE '0';
+  NeoPixelB     <= '1' WHEN (ADDR_INT = 16#0A1#) and (IO_CYCLE = '1') ELSE '0';
+  NeoPixelG     <= '1' WHEN (ADDR_INT = 16#0A3#) and (IO_CYCLE = '1') ELSE '0';
+  NeoPixelR     <= '1' WHEN (ADDR_INT = 16#0A4#) and (IO_CYCLE = '1') ELSE '0';
 	NeoPixelsingle    <= '1' WHEN (ADDR_INT = 16#0A2#) and (IO_CYCLE = '1') ELSE '0';  
 END a;

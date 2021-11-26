@@ -11,28 +11,24 @@ CONTENT
     [000..7FF] : 0000;  -- Default to NOP
 
            000 : B800;  -- 	LOADI 0
-           001 : 1015;  -- 	STORE OutColor
+           001 : 1011;  -- 	STORE OutColor
            002 : 9000;  -- 	IN    Switches
-           003 : 4816;  -- 	AND   RedMask
-           004 : 6007;  -- 	SHIFT 7
-           005 : 5015;  -- 	OR    OutColor
-           006 : 1015;  -- 	STORE OutColor
-           007 : 9000;  -- 	IN    Switches
-           008 : 4817;  -- 	AND   GreenMask
-           009 : 6004;  -- 	SHIFT 4
-           00A : 5015;  -- 	OR    OutColor
-           00B : 1015;  -- 	STORE OutColor
-           00C : 9000;  -- 	IN    Switches
-           00D : 4818;  -- 	AND   BlueMask
-           00E : 5015;  -- 	OR    OutColor
-           00F : 1015;  -- 	STORE OutColor
-           010 : 98A0;  -- 	OUT   NeoPixel16
-           011 : 9000;  -- 	in switches
-           012 : 6016;  -- 	shift -6
-           013 : 98A2;  -- 	out	  NeoPixelsingle
-           014 : 2800;  -- 	JUMP  Start	
-           015 : 0000;  -- OutColor:  DW 0
-           016 : 0030;  -- RedMask:   DW &B110000
-           017 : 000C;  -- GreenMask: DW &B1100
-           018 : 0003;  -- BlueMask:  DW &B11
+           003 : 4812;  -- 	AND   RedMask
+           004 : 6014;  -- 	SHIFT -4
+           005 : 98A4;  -- 	out NeoPixelR
+           006 : 9000;  -- 	IN    Switches
+           007 : 4813;  -- 	AND   GreenMask
+           008 : 6012;  -- 	SHIFT -2
+           009 : 98A3;  -- 	out NeoPixelG
+           00A : 9000;  -- 	IN    Switches
+           00B : 4814;  -- 	AND   BlueMask
+           00C : 98A1;  -- 	out NeoPixelB
+           00D : 9000;  -- 	in switches
+           00E : 6016;  -- 	shift -6
+           00F : 98A2;  -- 	out	  NeoPixelsingle
+           010 : 2800;  -- 	JUMP  Start	
+           011 : 0000;  -- OutColor:  DW 0
+           012 : 0030;  -- RedMask:   DW &B110000
+           013 : 000C;  -- GreenMask: DW &B1100
+           014 : 0003;  -- BlueMask:  DW &B11
   END;

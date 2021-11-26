@@ -24,29 +24,30 @@ Start:
 	AND   RedMask
 	; These bits are currently in 5-4, and
 	; they need to be in 12-11.
-	SHIFT 7
-	OR    OutColor
-	STORE OutColor
-
+	SHIFT -4
+	;OR    OutColor
+	;STORE OutColor
+	out NeoPixelR
 	; Repeat for green
 	IN    Switches
 	AND   GreenMask
 	; These bits are currently in 3-2, and
 	; they need to be in 7-6.
-	SHIFT 4
-	OR    OutColor
-	STORE OutColor
+	SHIFT -2
+	out NeoPixelG
+	;OR    OutColor
+	;STORE OutColor
 	
 	; Repeat for blue
 	IN    Switches
 	AND   BlueMask
 	; These bits are currently in 1-0, and
 	; are already there.
-	OR    OutColor
-	STORE OutColor
-	
+	;OR    OutColor
+	;STORE OutColor
+	out NeoPixelB
 	; Send to the NeoPixel controller
-	OUT   NeoPixel16
+	;OUT   NeoPixel16
 	in switches
 	shift -6
 	out	  NeoPixelsingle
@@ -67,5 +68,8 @@ I2C_cmd:   EQU &H090
 I2C_data:  EQU &H091
 I2C_rdy:   EQU &H092
 NeoPixel16:  EQU &H0A0
-NeoPixel24:  EQU &H0A1
+NeoPixelB:  EQU &H0A1
+NeoPixelG:  EQU &H0A3
+NeoPixelR:  EQU &H0A4
+
 NeoPixelsingle:  EQU &H0A2
