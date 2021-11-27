@@ -41,11 +41,17 @@ architecture internals of NeoPixelController is
 	signal led_hold : unsigned(6144 downto 0) := (others => '0');
 	
 	signal shift_amount_int :integer;
+	signal shift_amount_true :integer ;
 	shared variable Colorsize : bit :='0';
+	
+	type state_type is (a , b, c, d, e, f) ;
+	signal state : state_type;
 	
 	
 begin
+
 	shift_amount_int<= to_integer(shift_amount);
+	shift_amount_true<=24*shift_amount_int;
 	process (clk_10M, resetn)
 		-- protocol timing values (in 100s of ns)
 		constant t1h : integer := 8;
@@ -69,7 +75,6 @@ begin
 			reset_count := 10000000;
 			-- set sda inactive
 			sda <= '0';
-
 		elsif (rising_edge(clk_10M)) then
 
 			-- This IF block controls the various counters
@@ -143,17 +148,61 @@ begin
 		end if;
 	end process;
 	
-	process(latchsingle)
+	--process(latchsingle)
 	
-	begin
-		if rising_edge(latchsingle) then
-			if (colorsize ='0') then
-				led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_16color), 24*shift_amount_int));
-			else 
-				led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_24color), 24*shift_amount_int));
-			end if;
+--	begin
+--		if rising_edge(latchsingle) then
+--			--if (colorsize ='0') then
+--				led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_16color), 24*shift_amount_int));
+--			--else 
+--				--led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_24color), 24*shift_amount_int));
+--			--end if;
+--		end if;
+--	end process;
+	
+	process (latchsingle,resetn) 
+	begin 
+		if resetn = '0' then
+			
+			state<= a;
+		 
+		elsif rising_edge(latchsingle) then
+		case state is
+			when a=>
+				state<=b;
+			when b=>
+				state<=c;
+			when c=>
+			  state <=d;
+			when d=>
+			  state <=e;
+			when e=>
+			  state <=f;
+			when f=>
+			  state <=a;
+			end case;
 		end if;
 	end process;
+	
+	process(state)
+		alias slice : unsigned(23 downto 0) is led_hold (shift_amount_true downto (shift_amount_true - 23));	
+	begin
+		case state is
+			 when a=>
+				
+			when b=>
+					std_logic_vector(slice)<=std_logic_vector(slice) or led_16color;--led_buffer<=std_logic_vector(led_hold) or led_16color;
+			when c=>
+				led_buffer <= std_logic_vector(led_hold);
+			when d=>
+		
+			when e=>
+--				led_buffer <= std_logic_vector(shift_left(unsigned(led_buffer), shift_amount_true));
+		when f=>
+--				led_buffer <= std_logic_vector(shift_left(unsigned(led_buffer), shift_amount_true));
+			end case;
+	end process;
+				
 	
 	process(latchB)
 	begin 
