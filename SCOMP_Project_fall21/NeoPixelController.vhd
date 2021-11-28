@@ -37,7 +37,7 @@ architecture internals of NeoPixelController is
 	signal led_Gcolor : std_logic_vector(7 downto 0) := (others => '0');
 	signal led_Rcolor : std_logic_vector(7 downto 0) := (others => '0');
 	
-	signal led_buffer : std_logic_vector(6144 downto 0) := (others => '0');
+	signal led_buffer : unsigned(6144 downto 0) := (others => '0');
 	signal led_hold : unsigned(6144 downto 0) := (others => '0');
 	
 	signal shift_amount_int :integer;
@@ -45,7 +45,7 @@ architecture internals of NeoPixelController is
 	
 	
 begin
-	shift_amount_int<= to_integer(shift_amount);
+	shift_amount_int<= 24 * to_integer(shift_amount);
 	process (clk_10M, resetn)
 		-- protocol timing values (in 100s of ns)
 		constant t1h : integer := 8;
@@ -148,9 +148,14 @@ begin
 	begin
 		if rising_edge(latchsingle) then
 			if (colorsize ='0') then
-				led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_16color), 24*shift_amount_int));
-			else 
-				led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_24color), 24*shift_amount_int));
+				led_hold <= led_hold or unsigned(led_16color);
+				led_buffer <= shift_left(led_hold, shift_amount_int);				
+				--led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_16color), 24*shift_amount_int));
+			else
+				led_hold <= led_hold or unsigned(led_24color);
+				led_buffer <= shift_left(led_hold, shift_amount_int);
+				--led_buffer <= std_logic_vector(led_hold(23 + shift_amount_int downto shift_amount_int)) or led_24color;
+				--led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_24color), 24*shift_amount_int));
 			end if;
 		end if;
 	end process;
