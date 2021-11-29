@@ -11,6 +11,8 @@
 ; as red and blue.
 
 ORG 0
+loadi -2
+store count
 Start:
 	; Zero the color variable
 	LOADI 0
@@ -24,23 +26,24 @@ SingleOrAll:
 	AND EightSwitch
 	JPOS NeoPixel_Single
 	JUMP NeoPixel_All
-	JUMP Start
+	;JUMP Start
 NeoPixel16Block:
 	IN Switches
 	AND RedMask
-	OR  RedAdditional
-	SHIFT -10
+	;OR  RedAdditional
+	SHIFT 13
 	OR OutColor
 	STORE OutColor
 	IN Switches
 	AND GreenMask
-	OR GreenAdditional
-	SHIFT -6
+	;OR GreenAdditional
+	SHIFT 9
 	OR OutColor
 	STORE OutColor
 	IN Switches
 	AND BlueMask
-	OR BlueAdditional
+	SHIFT 4
+	;OR BlueAdditional
 	OR OutColor
 	STORE OutColor
 	LOAD OutColor
@@ -49,33 +52,52 @@ NeoPixel16Block:
 NeoPixel24:
 	IN    Switches
 	AND   RedMask
-	OR  RedAdditional
-	SHIFT -10
+	;OR  RedAdditional
+	SHIFT 5
 	OUT NeoPixelR
 	IN Switches
 	AND GreenMask
-	OR GreenAdditional
-	SHIFT -6
+	;OR GreenAdditional
+	SHIFT 6
 	OUT NeoPixelG
 	IN Switches
 	AND BlueMask
-	OR BlueAdditional
+	SHIFT 7
+	;OR BlueAdditional
 	OUT NeoPixelB
 	JUMP SingleOrAll
 NeoPixel_Single:
 	; Will Depend on the Key1 Push Button -- implement later
+	
+	;OUT  NeoPixelSingle
+	call delay
+	load count
+	addi 1
+	store count
+	out Hex0
 	IN Switches
-	AND SevenSwitch
-	JPOS NeoPixelSingleExecuteBlock
-	OUT  NeoPixelSingle
-	OUT  Hex0
-	JUMP NeoPixel_Single
+	AND EightSwitch
+	Jzero NeoPixelSingleExecuteBlock
+	Jump NeoPixel_Single
 NeoPixelSingleExecuteBlock:
+	Load count
 	OUT NeoPixelSingleExecute
 	JUMP Start
 NeoPixel_All:
 	; Do NOT call OUT NeoPixelSingle, the enable signal must remain 0 as we are not attempting to manipulate a specific signal
+	OUT NeoPixelSingle
 	JUMP  Start	
+	
+	
+
+	
+Delay:
+	OUT    Timer
+WaitingLoop:
+	IN     Timer
+	ADDI   -10
+	JNeG   WaitingLoop
+	RETURN
 
 OutColor:  DW 0
 RedMask:   DW &B100
@@ -87,7 +109,7 @@ BlueAdditional: DW &B011
 NineSwitch: DW &B1000000000
 EightSwitch: DW &B0100000000
 SevenSwitch: DW &B0010000000
-
+count: DW -2
 ; IO address constants
 Switches:  EQU &H000
 LEDs:      EQU &H001
