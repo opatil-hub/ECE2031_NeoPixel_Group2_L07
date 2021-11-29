@@ -24,7 +24,8 @@ ENTITY IO_DECODER IS
 	 NeoPixelB      : OUT STD_LOGIC;
 	 NeoPixelG      : OUT STD_LOGIC;
 	 NeoPixelR      : OUT STD_LOGIC;
-	 NeoPixelsingle      : OUT STD_LOGIC
+	 NeoPixelsingle      : OUT STD_LOGIC;
+	 NeoPixelSingleExecute : OUT STD_LOGIC
   );
 
 END ENTITY;
@@ -49,5 +50,6 @@ begin
   NeoPixelB     <= '1' WHEN (ADDR_INT = 16#0A1#) and (IO_CYCLE = '1') ELSE '0';
   NeoPixelG     <= '1' WHEN (ADDR_INT = 16#0A3#) and (IO_CYCLE = '1') ELSE '0';
   NeoPixelR     <= '1' WHEN (ADDR_INT = 16#0A4#) and (IO_CYCLE = '1') ELSE '0';
-	NeoPixelsingle    <= '1' WHEN (ADDR_INT = 16#0A2#) and (IO_CYCLE = '1') ELSE '0';  
+	NeoPixelsingle    <= '1' WHEN (ADDR_INT = 16#0A2#) and (IO_CYCLE = '1') ELSE '0';
+	NeoPixelSingleExecute <= '1' WHEN (ADDR_INT = 16#0A5#) and (IO_CYCLE = '1') ELSE '0';
 END a;

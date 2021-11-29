@@ -1,0 +1,78 @@
+-- Altera Memory Initialization File (MIF)
+
+DEPTH = 2048;
+WIDTH = 16;
+
+ADDRESS_RADIX = HEX;
+DATA_RADIX = HEX;
+
+CONTENT
+  BEGIN
+    [000..7FF] : 0000;  -- Default to NOP
+
+           000 : B800;  -- 	LOADI 0
+           001 : 1037;  -- 	STORE OutColor
+           002 : 9000;  -- 	IN Switches
+           003 : 483E;  -- 	AND NineSwitch
+           004 : 380B;  -- 	JPOS NeoPixel16Block
+           005 : 281F;  -- 	JUMP NeoPixel24
+           006 : 9000;  -- 	IN Switches
+           007 : 483F;  -- 	AND EightSwitch
+           008 : 382E;  -- 	JPOS NeoPixel_Single
+           009 : 2836;  -- 	JUMP NeoPixel_All
+           00A : 2800;  -- 	JUMP Start
+           00B : 9000;  -- 	IN Switches
+           00C : 4838;  -- 	AND RedMask
+           00D : 5039;  -- 	OR  RedAdditional
+           00E : 601A;  -- 	SHIFT -10
+           00F : 5037;  -- 	OR OutColor
+           010 : 1037;  -- 	STORE OutColor
+           011 : 9000;  -- 	IN Switches
+           012 : 483A;  -- 	AND GreenMask
+           013 : 503B;  -- 	OR GreenAdditional
+           014 : 6016;  -- 	SHIFT -6
+           015 : 5037;  -- 	OR OutColor
+           016 : 1037;  -- 	STORE OutColor
+           017 : 9000;  -- 	IN Switches
+           018 : 483C;  -- 	AND BlueMask
+           019 : 503D;  -- 	OR BlueAdditional
+           01A : 5037;  -- 	OR OutColor
+           01B : 1037;  -- 	STORE OutColor
+           01C : 0837;  -- 	LOAD OutColor
+           01D : 98A0;  -- 	OUT NeoPixel16
+           01E : 2806;  -- 	JUMP SingleOrAll
+           01F : 9000;  -- 	IN    Switches
+           020 : 4838;  -- 	AND   RedMask
+           021 : 5039;  -- 	OR  RedAdditional
+           022 : 601A;  -- 	SHIFT -10
+           023 : 98A4;  -- 	OUT NeoPixelR
+           024 : 9000;  -- 	IN Switches
+           025 : 483A;  -- 	AND GreenMask
+           026 : 503B;  -- 	OR GreenAdditional
+           027 : 6016;  -- 	SHIFT -6
+           028 : 98A3;  -- 	OUT NeoPixelG
+           029 : 9000;  -- 	IN Switches
+           02A : 483C;  -- 	AND BlueMask
+           02B : 503D;  -- 	OR BlueAdditional
+           02C : 98A1;  -- 	OUT NeoPixelB
+           02D : 2806;  -- 	JUMP SingleOrAll
+           02E : 9000;  -- 	IN Switches
+           02F : 4840;  -- 	AND SevenSwitch
+           030 : 3834;  -- 	JPOS NeoPixelSingleExecuteBlock
+           031 : 98A2;  -- 	OUT  NeoPixelSingle
+           032 : 9804;  -- 	OUT  Hex0
+           033 : 282E;  -- 	JUMP NeoPixel_Single
+           034 : 98A5;  -- 	OUT NeoPixelSingleExecute
+           035 : 2800;  -- 	JUMP Start
+           036 : 2800;  -- 	JUMP  Start	
+           037 : 0000;  -- OutColor:  DW 0
+           038 : 0004;  -- RedMask:   DW &B100
+           039 : 0006;  -- RedAdditional: DW &B110
+           03A : 0002;  -- GreenMask: DW &B010
+           03B : 0003;  -- GreenAdditional: DW &B011
+           03C : 0001;  -- BlueMask:  DW &B001
+           03D : 0003;  -- BlueAdditional: DW &B011
+           03E : 0200;  -- NineSwitch: DW &B1000000000
+           03F : 0100;  -- EightSwitch: DW &B0100000000
+           040 : 0080;  -- SevenSwitch: DW &B0010000000
+  END;

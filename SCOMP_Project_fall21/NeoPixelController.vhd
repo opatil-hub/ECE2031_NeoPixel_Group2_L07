@@ -33,12 +33,13 @@ architecture internals of NeoPixelController is
 	-- signal led_buffer : std_logic_vector(buffer_bits downto 0);
 	signal led_16color : std_logic_vector(23 downto 0) := (others => '0');
 	signal led_24color : std_logic_vector(23 downto 0) := (others => '0');
+	signal led_color  : std_logic_vector(23 downto 0) := (others => '0');
 	signal led_Bcolor : std_logic_vector(7 downto 0) := (others => '0');
 	signal led_Gcolor : std_logic_vector(7 downto 0) := (others => '0');
 	signal led_Rcolor : std_logic_vector(7 downto 0) := (others => '0');
 	
 	signal led_buffer : unsigned(6144 downto 0) := (others => '0');
-	signal led_hold : unsigned(6144 downto 0) := (others => '0');
+	--signal led_hold : unsigned(6144 downto 0) := (others => '0');
 	
 	signal shift_amount_int :integer;
 	shared variable Colorsize : bit :='0';
@@ -136,27 +137,37 @@ begin
 	 
 	begin
 		if rising_edge(latch16) then
-			--colorsize:='0';
 			
 			led_16color<=data(10 downto 5) & "00" & data(15 downto 11) & "000" & data(4 downto 0) & "000" ;
 			
 		end if;
 	end process;
 	
+	-- This process block implements outputting either a single LED or all LEDs on the
+	-- NeoPixel Strip
 	process(latchsingle)
-	
+	variable ledHolder : unsigned(6144 downto 0);
+	variable ledBuffer : unsigned(6144 downto 0);
+	constant shiftNum : integer := shift_amount_int;
 	begin
-		if rising_edge(latchsingle) then
+		if latchsingle = '1' then
+			ledHolder := (others => '0');
 			if (colorsize ='0') then
-				led_hold <= led_hold or unsigned(led_16color);
-				led_buffer <= shift_left(led_hold, shift_amount_int);				
+				ledHolder := ledHolder or unsigned(led_16color);			
 				--led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_16color), 24*shift_amount_int));
 			else
-				led_hold <= led_hold or unsigned(led_24color);
-				led_buffer <= shift_left(led_hold, shift_amount_int);
-				--led_buffer <= std_logic_vector(led_hold(23 + shift_amount_int downto shift_amount_int)) or led_24color;
+				ledHolder := ledHolder or unsigned(led_24color);
 				--led_buffer <= std_logic_vector(shift_left(unsigned(std_logic_vector(led_hold) or led_24color), 24*shift_amount_int));
 			end if;
+			for i in 1 to shiftNum loop
+				ledHolder := shift_left(ledHolder, 1);
+			end loop;
+			--led_hold <= shift_left(led_hold, shift_amount_int);
+			ledBuffer := led_buffer xor ledHolder;
+			led_buffer <= ledBuffer or ledHolder;
+		else
+			ledBuffer := shift_left(led_buffer,24);
+			led_buffer <= ledBuffer or unsigned(led_16color);
 		end if;
 	end process;
 	
