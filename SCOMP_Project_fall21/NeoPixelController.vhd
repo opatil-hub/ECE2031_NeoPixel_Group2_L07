@@ -21,7 +21,8 @@ use ieee.numeric_std.all;
 		Rdata     : in   std_logic_vector(15 downto 0);
 		data     : in   std_logic_vector(15 downto 0);
 		sda      : out  std_logic;
-		latchall : in std_logic
+		latchall : in std_logic;
+		latchautoinc : in std_logic
 	); 
 
 end entity;
@@ -42,10 +43,14 @@ architecture internals of NeoPixelController is
 	signal led_buffer : unsigned(6144 downto 0) := (others => '0');
 	--signal led_hold : unsigned(6144 downto 0) := (others => '0');
 	
+	type state_type is (ledsingle, ledall, ledincrement);
+	signal state : state_type;
+	
 	signal shift_amount_int :integer;
 	shared variable Colorsize : bit :='0';
 	shared variable ledBufferSingle : unsigned(6144 downto 0);
 	shared variable ledBufferAll : unsigned(6144 downto 0);
+	shared variable ledBufferAutoInc : unsigned(6144 downto 0);
 	shared variable singleOrAll : bit := '0';
 	
 	
@@ -74,6 +79,7 @@ begin
 			reset_count := 10000000;
 			-- set sda inactive
 			sda <= '0';
+			state <= ledall;
 		elsif (rising_edge(clk_10M)) then
 
 			-- This IF block controls the various counters
@@ -130,13 +136,46 @@ begin
 				sda <= '0';
 			end if;
 			
-			if singleOrAll = '1' then
-				led_buffer <= ledBufferSingle;
-			else
-				led_buffer <= ledBufferAll;
-			end if;
+			case state is
+				when ledall =>
+					if latchsingle = '1' then
+						state <= ledsingle;
+					elsif latchautoinc = '1' then
+						state <= ledincrement;
+					end if;
+				when ledsingle =>
+					if latchall = '1' then
+						state <= ledall;
+					elsif latchautoinc = '1' then
+						state <= ledincrement;
+					end if;
+				when ledincrement =>
+					if latchsingle = '1' then
+						state <= ledsingle;
+					else
+						state <= ledall;
+					end if;
+			end case;
+			
+--			if singleOrAll = '1' then
+--				led_buffer <= ledBufferSingle;
+--			else
+--				led_buffer <= ledBufferAll;
+--			end if;
 			
 		end if;
+	end process;
+	
+	process(state)
+	begin
+		case state is
+			when ledall =>
+				led_buffer <= ledBufferSingle;
+			when ledsingle =>
+				led_buffer <= ledBufferAll;
+			when ledincrement =>
+				led_buffer <= ledBufferAutoInc;
+		end case;
 	end process;
 	
 	-- Process to handle OUTs from SCOMP
