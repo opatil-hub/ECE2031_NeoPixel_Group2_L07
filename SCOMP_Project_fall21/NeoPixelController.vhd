@@ -157,7 +157,7 @@ begin
 					if latchsingle = '1' then
 						state <= ledsingle;
 					else
-						state <= ledall;
+						state <= ledincrement;
 					end if;
 			end case;
 			
@@ -269,7 +269,7 @@ begin
 --					end loop;
 					--ledBufferAutoInc := (others => '0');
 					--ledBufferAutoInc := led_buffer xor ledHolder2;
-					ledBufferAutoInc := ledBufferAutoInc or ledHolder2;
+					ledBufferAutoInc :=  ledHolder2;
 				end if;
 			end if;
 		end if;

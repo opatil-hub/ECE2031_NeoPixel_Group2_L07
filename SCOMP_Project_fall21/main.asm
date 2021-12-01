@@ -88,6 +88,7 @@ NeoPixelSingleExecuteBlock:
 	JUMP Start
 	
 AutoInc:
+	OUT NeoPixelAutoInc
 IncLoop:
 	IN Switches
 	AND SevenSwitch

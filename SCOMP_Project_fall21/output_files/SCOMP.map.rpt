@@ -1,5 +1,5 @@
 Analysis & Synthesis report for SCOMP
-Tue Nov 30 20:46:08 2021
+Tue Nov 30 21:16:38 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -64,15 +64,15 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                     ;
 +------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Tue Nov 30 20:46:08 2021       ;
+; Analysis & Synthesis Status        ; Successful - Tue Nov 30 21:16:38 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 1,765                                       ;
-;     Total combinational functions  ; 1,484                                       ;
-;     Dedicated logic registers      ; 857                                         ;
-; Total registers                    ; 857                                         ;
+; Total logic elements               ; 2,184                                       ;
+;     Total combinational functions  ; 1,902                                       ;
+;     Dedicated logic registers      ; 999                                         ;
+; Total registers                    ; 999                                         ;
 ; Total pins                         ; 69                                          ;
 ; Total virtual pins                 ; 0                                           ;
 ; Total memory bits                  ; 32,768                                      ;
@@ -222,40 +222,40 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +----------------------------------+-----------------+------------------------------------------+---------------------------------------------------------------------------------------------------------+---------+
 
 
-+--------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary                                                      ;
-+---------------------------------------------+----------------------------------------------------+
-; Resource                                    ; Usage                                              ;
-+---------------------------------------------+----------------------------------------------------+
-; Estimated Total logic elements              ; 1,765                                              ;
-;                                             ;                                                    ;
-; Total combinational functions               ; 1484                                               ;
-; Logic element usage by number of LUT inputs ;                                                    ;
-;     -- 4 input functions                    ; 859                                                ;
-;     -- 3 input functions                    ; 373                                                ;
-;     -- <=2 input functions                  ; 252                                                ;
-;                                             ;                                                    ;
-; Logic elements by mode                      ;                                                    ;
-;     -- normal mode                          ; 1377                                               ;
-;     -- arithmetic mode                      ; 107                                                ;
-;                                             ;                                                    ;
-; Total registers                             ; 857                                                ;
-;     -- Dedicated logic registers            ; 857                                                ;
-;     -- I/O registers                        ; 0                                                  ;
-;                                             ;                                                    ;
-; I/O pins                                    ; 69                                                 ;
-; Total memory bits                           ; 32768                                              ;
-;                                             ;                                                    ;
-; Embedded Multiplier 9-bit elements          ; 0                                                  ;
-;                                             ;                                                    ;
-; Total PLLs                                  ; 1                                                  ;
-;     -- PLLs                                 ; 1                                                  ;
-;                                             ;                                                    ;
-; Maximum fan-out node                        ; I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[7]~0 ;
-; Maximum fan-out                             ; 432                                                ;
-; Total fan-out                               ; 8011                                               ;
-; Average fan-out                             ; 3.21                                               ;
-+---------------------------------------------+----------------------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                                                          ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
+; Resource                                    ; Usage                                                                                  ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
+; Estimated Total logic elements              ; 2,184                                                                                  ;
+;                                             ;                                                                                        ;
+; Total combinational functions               ; 1902                                                                                   ;
+; Logic element usage by number of LUT inputs ;                                                                                        ;
+;     -- 4 input functions                    ; 1088                                                                                   ;
+;     -- 3 input functions                    ; 608                                                                                    ;
+;     -- <=2 input functions                  ; 206                                                                                    ;
+;                                             ;                                                                                        ;
+; Logic elements by mode                      ;                                                                                        ;
+;     -- normal mode                          ; 1744                                                                                   ;
+;     -- arithmetic mode                      ; 158                                                                                    ;
+;                                             ;                                                                                        ;
+; Total registers                             ; 999                                                                                    ;
+;     -- Dedicated logic registers            ; 999                                                                                    ;
+;     -- I/O registers                        ; 0                                                                                      ;
+;                                             ;                                                                                        ;
+; I/O pins                                    ; 69                                                                                     ;
+; Total memory bits                           ; 32768                                                                                  ;
+;                                             ;                                                                                        ;
+; Embedded Multiplier 9-bit elements          ; 0                                                                                      ;
+;                                             ;                                                                                        ;
+; Total PLLs                                  ; 1                                                                                      ;
+;     -- PLLs                                 ; 1                                                                                      ;
+;                                             ;                                                                                        ;
+; Maximum fan-out node                        ; PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated|wire_pll1_clk[0] ;
+; Maximum fan-out                             ; 537                                                                                    ;
+; Total fan-out                               ; 10058                                                                                  ;
+; Average fan-out                             ; 3.29                                                                                   ;
++---------------------------------------------+----------------------------------------------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -263,7 +263,7 @@ Parallel compilation was disabled, but you have multiple processors available. E
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
 ; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name                                                                     ; Entity Name        ; Library Name ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
-; |SCOMP_System                             ; 1484 (3)            ; 857 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System       ; work         ;
+; |SCOMP_System                             ; 1902 (3)            ; 999 (0)                   ; 32768       ; 0          ; 0            ; 0       ; 0         ; 69   ; 0            ; 0          ; |SCOMP_System                                                                           ; SCOMP_System       ; work         ;
 ;    |DIG_IN:inst7|                         ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_IN:inst7                                                              ; DIG_IN             ; work         ;
 ;    |DIG_OUT:inst6|                        ; 0 (0)               ; 10 (10)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|DIG_OUT:inst6                                                             ; DIG_OUT            ; work         ;
 ;    |HEX_DISP_6:inst9|                     ; 45 (3)              ; 24 (0)                    ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|HEX_DISP_6:inst9                                                          ; HEX_DISP_6         ; work         ;
@@ -277,17 +277,17 @@ Parallel compilation was disabled, but you have multiple processors available. E
 ;       |i2c_ctrl:inst14|                   ; 58 (58)             ; 70 (70)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14                                      ; i2c_ctrl           ; work         ;
 ;       |i2c_master:inst|                   ; 100 (100)           ; 55 (55)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst                                      ; i2c_master         ; work         ;
 ;    |IO_DECODER:inst3|                     ; 20 (20)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|IO_DECODER:inst3                                                          ; IO_DECODER         ; work         ;
-;    |NeoPixelController:inst16|            ; 646 (646)           ; 465 (465)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|NeoPixelController:inst16                                                 ; NeoPixelController ; work         ;
+;    |NeoPixelController:inst16|            ; 1060 (1060)         ; 607 (607)                 ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|NeoPixelController:inst16                                                 ; NeoPixelController ; work         ;
 ;    |PLL_main:inst1|                       ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1                                                            ; PLL_main           ; work         ;
 ;       |altpll:altpll_component|           ; 0 (0)               ; 1 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component                                    ; altpll             ; work         ;
 ;          |PLL_main_altpll:auto_generated| ; 0 (0)               ; 1 (1)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|PLL_main:inst1|altpll:altpll_component|PLL_main_altpll:auto_generated     ; PLL_main_altpll    ; work         ;
-;    |SCOMP:inst|                           ; 483 (400)           ; 178 (178)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP              ; work         ;
+;    |SCOMP:inst|                           ; 488 (404)           ; 178 (178)                 ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst                                                                ; SCOMP              ; work         ;
 ;       |altsyncram:altsyncram_component|   ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component                                ; altsyncram         ; work         ;
 ;          |altsyncram_39r3:auto_generated| ; 0 (0)               ; 0 (0)                     ; 32768       ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|altsyncram:altsyncram_component|altsyncram_39r3:auto_generated ; altsyncram_39r3    ; work         ;
+;       |lpm_bustri:io_bus|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_bustri:io_bus                                              ; lpm_bustri         ; work         ;
 ;       |lpm_clshift:shifter|               ; 83 (0)              ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter                                            ; lpm_clshift        ; work         ;
 ;          |lpm_clshift_fuc:auto_generated| ; 83 (83)             ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|SCOMP:inst|lpm_clshift:shifter|lpm_clshift_fuc:auto_generated             ; lpm_clshift_fuc    ; work         ;
-;    |TIMER:inst4|                          ; 35 (34)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                               ; TIMER              ; work         ;
-;       |lpm_bustri:IO_BUS|                 ; 1 (1)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4|lpm_bustri:IO_BUS                                             ; lpm_bustri         ; work         ;
+;    |TIMER:inst4|                          ; 34 (34)             ; 16 (16)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|TIMER:inst4                                                               ; TIMER              ; work         ;
 ;    |clk_div:inst5|                        ; 34 (34)             ; 28 (28)                   ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |SCOMP_System|clk_div:inst5                                                             ; clk_div            ; work         ;
 +-------------------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------------------------------------------------------------+--------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
@@ -421,54 +421,177 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+--------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                               ;
-+---------------------------------------------------------+----------------------------------------+
-; Register name                                           ; Reason for Removal                     ;
-+---------------------------------------------------------+----------------------------------------+
-; DIG_IN:inst7|B_DI[10..15]                               ; Stuck at GND due to stuck port data_in ;
-; I2C_INTERFACE:inst14|i2c_master:inst|scl_clk            ; Stuck at GND due to stuck port data_in ;
-; NeoPixelController:inst16|led_16color[0..2,8..10,16,17] ; Stuck at GND due to stuck port data_in ;
-; NeoPixelController:inst16|ledBufferAutoInc[0..119]      ; Stuck at VCC due to stuck port data_in ;
-; NeoPixelController:inst16|autoin                        ; Lost fanout                            ;
-; NeoPixelController:inst16|shift_count[0..23]            ; Lost fanout                            ;
-; NeoPixelController:inst16|shift_amount_int2[3..31]      ; Lost fanout                            ;
-; NeoPixelController:inst16|ledHolder2[0..119]            ; Lost fanout                            ;
-; I2C_INTERFACE:inst14|i2c_master:inst|count[2]           ; Stuck at GND due to stuck port data_in ;
-; SCOMP:inst|state.ex_nop                                 ; Lost fanout                            ;
-; Total Number of Removed Registers = 311                 ;                                        ;
-+---------------------------------------------------------+----------------------------------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                     ;
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+; Register name                                                                                                                            ; Reason for Removal                                          ;
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
+; DIG_IN:inst7|B_DI[10..15]                                                                                                                ; Stuck at GND due to stuck port data_in                      ;
+; I2C_INTERFACE:inst14|i2c_master:inst|scl_clk                                                                                             ; Stuck at GND due to stuck port data_in                      ;
+; NeoPixelController:inst16|led_16color[0..2,8..10,16,17]                                                                                  ; Stuck at GND due to stuck port data_in                      ;
+; NeoPixelController:inst16|ledHolder2[119]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[119] ;
+; NeoPixelController:inst16|ledHolder2[118]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[118] ;
+; NeoPixelController:inst16|ledHolder2[117]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[117] ;
+; NeoPixelController:inst16|ledHolder2[116]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[116] ;
+; NeoPixelController:inst16|ledHolder2[115]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[115] ;
+; NeoPixelController:inst16|ledHolder2[114]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[114] ;
+; NeoPixelController:inst16|ledHolder2[113]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[113] ;
+; NeoPixelController:inst16|ledHolder2[112]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[112] ;
+; NeoPixelController:inst16|ledHolder2[111]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[111] ;
+; NeoPixelController:inst16|ledHolder2[110]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[110] ;
+; NeoPixelController:inst16|ledHolder2[109]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[109] ;
+; NeoPixelController:inst16|ledHolder2[108]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[108] ;
+; NeoPixelController:inst16|ledHolder2[107]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[107] ;
+; NeoPixelController:inst16|ledHolder2[106]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[106] ;
+; NeoPixelController:inst16|ledHolder2[105]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[105] ;
+; NeoPixelController:inst16|ledHolder2[104]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[104] ;
+; NeoPixelController:inst16|ledHolder2[103]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[103] ;
+; NeoPixelController:inst16|ledHolder2[102]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[102] ;
+; NeoPixelController:inst16|ledHolder2[101]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[101] ;
+; NeoPixelController:inst16|ledHolder2[100]                                                                                                ; Merged with NeoPixelController:inst16|ledBufferAutoInc[100] ;
+; NeoPixelController:inst16|ledHolder2[99]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[99]  ;
+; NeoPixelController:inst16|ledHolder2[98]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[98]  ;
+; NeoPixelController:inst16|ledHolder2[97]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[97]  ;
+; NeoPixelController:inst16|ledHolder2[96]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[96]  ;
+; NeoPixelController:inst16|ledHolder2[95]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[95]  ;
+; NeoPixelController:inst16|ledHolder2[94]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[94]  ;
+; NeoPixelController:inst16|ledHolder2[93]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[93]  ;
+; NeoPixelController:inst16|ledHolder2[92]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[92]  ;
+; NeoPixelController:inst16|ledHolder2[91]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[91]  ;
+; NeoPixelController:inst16|ledHolder2[90]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[90]  ;
+; NeoPixelController:inst16|ledHolder2[89]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[89]  ;
+; NeoPixelController:inst16|ledHolder2[88]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[88]  ;
+; NeoPixelController:inst16|ledHolder2[87]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[87]  ;
+; NeoPixelController:inst16|ledHolder2[86]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[86]  ;
+; NeoPixelController:inst16|ledHolder2[85]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[85]  ;
+; NeoPixelController:inst16|ledHolder2[84]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[84]  ;
+; NeoPixelController:inst16|ledHolder2[83]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[83]  ;
+; NeoPixelController:inst16|ledHolder2[82]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[82]  ;
+; NeoPixelController:inst16|ledHolder2[81]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[81]  ;
+; NeoPixelController:inst16|ledHolder2[80]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[80]  ;
+; NeoPixelController:inst16|ledHolder2[79]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[79]  ;
+; NeoPixelController:inst16|ledHolder2[78]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[78]  ;
+; NeoPixelController:inst16|ledHolder2[77]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[77]  ;
+; NeoPixelController:inst16|ledHolder2[76]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[76]  ;
+; NeoPixelController:inst16|ledHolder2[75]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[75]  ;
+; NeoPixelController:inst16|ledHolder2[74]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[74]  ;
+; NeoPixelController:inst16|ledHolder2[73]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[73]  ;
+; NeoPixelController:inst16|ledHolder2[72]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[72]  ;
+; NeoPixelController:inst16|ledHolder2[71]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[71]  ;
+; NeoPixelController:inst16|ledHolder2[70]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[70]  ;
+; NeoPixelController:inst16|ledHolder2[69]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[69]  ;
+; NeoPixelController:inst16|ledHolder2[68]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[68]  ;
+; NeoPixelController:inst16|ledHolder2[67]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[67]  ;
+; NeoPixelController:inst16|ledHolder2[66]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[66]  ;
+; NeoPixelController:inst16|ledHolder2[65]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[65]  ;
+; NeoPixelController:inst16|ledHolder2[64]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[64]  ;
+; NeoPixelController:inst16|ledHolder2[63]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[63]  ;
+; NeoPixelController:inst16|ledHolder2[62]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[62]  ;
+; NeoPixelController:inst16|ledHolder2[61]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[61]  ;
+; NeoPixelController:inst16|ledHolder2[60]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[60]  ;
+; NeoPixelController:inst16|ledHolder2[59]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[59]  ;
+; NeoPixelController:inst16|ledHolder2[58]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[58]  ;
+; NeoPixelController:inst16|ledHolder2[57]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[57]  ;
+; NeoPixelController:inst16|ledHolder2[56]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[56]  ;
+; NeoPixelController:inst16|ledHolder2[55]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[55]  ;
+; NeoPixelController:inst16|ledHolder2[54]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[54]  ;
+; NeoPixelController:inst16|ledHolder2[53]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[53]  ;
+; NeoPixelController:inst16|ledHolder2[52]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[52]  ;
+; NeoPixelController:inst16|ledHolder2[51]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[51]  ;
+; NeoPixelController:inst16|ledHolder2[50]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[50]  ;
+; NeoPixelController:inst16|ledHolder2[49]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[49]  ;
+; NeoPixelController:inst16|ledHolder2[48]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[48]  ;
+; NeoPixelController:inst16|ledHolder2[47]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[47]  ;
+; NeoPixelController:inst16|ledHolder2[46]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[46]  ;
+; NeoPixelController:inst16|ledHolder2[45]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[45]  ;
+; NeoPixelController:inst16|ledHolder2[44]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[44]  ;
+; NeoPixelController:inst16|ledHolder2[43]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[43]  ;
+; NeoPixelController:inst16|ledHolder2[42]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[42]  ;
+; NeoPixelController:inst16|ledHolder2[41]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[41]  ;
+; NeoPixelController:inst16|ledHolder2[40]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[40]  ;
+; NeoPixelController:inst16|ledHolder2[39]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[39]  ;
+; NeoPixelController:inst16|ledHolder2[38]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[38]  ;
+; NeoPixelController:inst16|ledHolder2[37]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[37]  ;
+; NeoPixelController:inst16|ledHolder2[36]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[36]  ;
+; NeoPixelController:inst16|ledHolder2[35]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[35]  ;
+; NeoPixelController:inst16|ledHolder2[34]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[34]  ;
+; NeoPixelController:inst16|ledHolder2[33]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[33]  ;
+; NeoPixelController:inst16|ledHolder2[32]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[32]  ;
+; NeoPixelController:inst16|ledHolder2[31]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[31]  ;
+; NeoPixelController:inst16|ledHolder2[30]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[30]  ;
+; NeoPixelController:inst16|ledHolder2[29]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[29]  ;
+; NeoPixelController:inst16|ledHolder2[28]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[28]  ;
+; NeoPixelController:inst16|ledHolder2[27]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[27]  ;
+; NeoPixelController:inst16|ledHolder2[26]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[26]  ;
+; NeoPixelController:inst16|ledHolder2[25]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[25]  ;
+; NeoPixelController:inst16|ledHolder2[24]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[24]  ;
+; NeoPixelController:inst16|ledHolder2[23]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[23]  ;
+; NeoPixelController:inst16|ledHolder2[22]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[22]  ;
+; NeoPixelController:inst16|ledHolder2[21]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[21]  ;
+; NeoPixelController:inst16|ledHolder2[20]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[20]  ;
+; NeoPixelController:inst16|ledHolder2[19]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[19]  ;
+; NeoPixelController:inst16|ledHolder2[18]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[18]  ;
+; NeoPixelController:inst16|ledHolder2[17]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[17]  ;
+; NeoPixelController:inst16|ledHolder2[16]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[16]  ;
+; NeoPixelController:inst16|ledHolder2[15]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[15]  ;
+; NeoPixelController:inst16|ledHolder2[14]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[14]  ;
+; NeoPixelController:inst16|ledHolder2[13]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[13]  ;
+; NeoPixelController:inst16|ledHolder2[12]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[12]  ;
+; NeoPixelController:inst16|ledHolder2[11]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[11]  ;
+; NeoPixelController:inst16|ledHolder2[10]                                                                                                 ; Merged with NeoPixelController:inst16|ledBufferAutoInc[10]  ;
+; NeoPixelController:inst16|ledHolder2[9]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[9]   ;
+; NeoPixelController:inst16|ledHolder2[8]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[8]   ;
+; NeoPixelController:inst16|ledHolder2[7]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[7]   ;
+; NeoPixelController:inst16|ledHolder2[6]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[6]   ;
+; NeoPixelController:inst16|ledHolder2[5]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[5]   ;
+; NeoPixelController:inst16|ledHolder2[4]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[4]   ;
+; NeoPixelController:inst16|ledHolder2[3]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[3]   ;
+; NeoPixelController:inst16|ledHolder2[2]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[2]   ;
+; NeoPixelController:inst16|ledHolder2[1]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[1]   ;
+; NeoPixelController:inst16|ledHolder2[0]                                                                                                  ; Merged with NeoPixelController:inst16|ledBufferAutoInc[0]   ;
+; NeoPixelController:inst16|ledBufferAutoInc[0..2,8..10,16,17,24,25,32,33,40,41,48,49,56,57,64,65,72,73,80,81,88,89,96,97,104,105,112,113] ; Stuck at GND due to stuck port data_in                      ;
+; I2C_INTERFACE:inst14|i2c_master:inst|count[2]                                                                                            ; Stuck at GND due to stuck port data_in                      ;
+; SCOMP:inst|state.ex_nop                                                                                                                  ; Lost fanout                                                 ;
+; Total Number of Removed Registers = 169                                                                                                  ;                                                             ;
++------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                ;
-+-------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; Register name                             ; Reason for Removal        ; Registers Removed due to This Register                                             ;
-+-------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
-; NeoPixelController:inst16|led_16color[0]  ; Stuck at GND              ; NeoPixelController:inst16|ledBufferAutoInc[119],                                   ;
-;                                           ; due to stuck port data_in ; NeoPixelController:inst16|ledBufferAutoInc[118],                                   ;
-;                                           ;                           ; NeoPixelController:inst16|ledBufferAutoInc[117],                                   ;
-;                                           ;                           ; NeoPixelController:inst16|ledBufferAutoInc[116], NeoPixelController:inst16|autoin, ;
-;                                           ;                           ; NeoPixelController:inst16|shift_amount_int2[12],                                   ;
-;                                           ;                           ; NeoPixelController:inst16|shift_amount_int2[10],                                   ;
-;                                           ;                           ; NeoPixelController:inst16|shift_amount_int2[9],                                    ;
-;                                           ;                           ; NeoPixelController:inst16|shift_amount_int2[8],                                    ;
-;                                           ;                           ; NeoPixelController:inst16|ledHolder2[114], NeoPixelController:inst16|ledHolder2[0] ;
-; NeoPixelController:inst16|led_16color[1]  ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[1]                                            ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-; NeoPixelController:inst16|led_16color[2]  ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[2]                                            ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-; NeoPixelController:inst16|led_16color[8]  ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[8]                                            ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-; NeoPixelController:inst16|led_16color[9]  ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[9]                                            ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-; NeoPixelController:inst16|led_16color[10] ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[10]                                           ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-; NeoPixelController:inst16|led_16color[16] ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[16]                                           ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-; NeoPixelController:inst16|led_16color[17] ; Stuck at GND              ; NeoPixelController:inst16|ledHolder2[17]                                           ;
-;                                           ; due to stuck port data_in ;                                                                                    ;
-+-------------------------------------------+---------------------------+------------------------------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                  ;
++-----------------------------------------------+---------------------------+--------------------------------------------------+
+; Register name                                 ; Reason for Removal        ; Registers Removed due to This Register           ;
++-----------------------------------------------+---------------------------+--------------------------------------------------+
+; NeoPixelController:inst16|ledBufferAutoInc[1] ; Stuck at GND              ; NeoPixelController:inst16|ledBufferAutoInc[9],   ;
+;                                               ; due to stuck port data_in ; NeoPixelController:inst16|ledBufferAutoInc[17],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[25],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[33],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[41],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[49],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[57],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[65],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[73],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[81],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[89],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[97],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[105], ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[113]  ;
+; NeoPixelController:inst16|ledBufferAutoInc[0] ; Stuck at GND              ; NeoPixelController:inst16|ledBufferAutoInc[8],   ;
+;                                               ; due to stuck port data_in ; NeoPixelController:inst16|ledBufferAutoInc[16],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[24],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[32],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[40],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[48],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[56],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[64],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[72],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[80],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[88],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[96],  ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[104], ;
+;                                               ;                           ; NeoPixelController:inst16|ledBufferAutoInc[112]  ;
+; NeoPixelController:inst16|ledBufferAutoInc[2] ; Stuck at GND              ; NeoPixelController:inst16|ledBufferAutoInc[10]   ;
+;                                               ; due to stuck port data_in ;                                                  ;
++-----------------------------------------------+---------------------------+--------------------------------------------------+
 
 
 +------------------------------------------------------+
@@ -476,12 +599,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 857   ;
-; Number of registers using Synchronous Clear  ; 24    ;
-; Number of registers using Synchronous Load   ; 120   ;
-; Number of registers using Asynchronous Clear ; 179   ;
+; Total registers                              ; 999   ;
+; Number of registers using Synchronous Clear  ; 59    ;
+; Number of registers using Synchronous Load   ; 123   ;
+; Number of registers using Asynchronous Clear ; 232   ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 457   ;
+; Number of registers using Clock Enable       ; 599   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -506,39 +629,53 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; NeoPixelController:inst16|reset_count[9]        ; 3       ;
 ; NeoPixelController:inst16|reset_count[7]        ; 2       ;
 ; I2C_INTERFACE:inst14|i2c_master:inst|sda_int    ; 2       ;
+; NeoPixelController:inst16|shift_count[23]       ; 2       ;
+; NeoPixelController:inst16|shift_count[20]       ; 2       ;
+; NeoPixelController:inst16|shift_count[19]       ; 2       ;
+; NeoPixelController:inst16|shift_count[15]       ; 2       ;
+; NeoPixelController:inst16|shift_count[12]       ; 2       ;
+; NeoPixelController:inst16|shift_count[10]       ; 2       ;
+; NeoPixelController:inst16|shift_count[9]        ; 2       ;
+; NeoPixelController:inst16|shift_count[7]        ; 2       ;
 ; I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[2] ; 16      ;
 ; I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[1] ; 29      ;
 ; I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[0] ; 26      ;
-; Total number of inverted registers = 18         ;         ;
+; Total number of inverted registers = 26         ;         ;
 +-------------------------------------------------+---------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                      ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
-; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[3][10]                        ;
-; 4:1                ; 120 bits  ; 240 LEs       ; 240 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst16|led_buffer[92]          ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|addr_rw[0]   ;
-; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|tx_byte[7]   ;
-; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]                                 ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[0]   ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[10] ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[6]  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[10]                                 ;
-; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|enc_count               ;
-; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|bit_count               ;
-; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|reset_count             ;
-; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|reset_count             ;
-; 3:1                ; 40 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0              ;
-; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0              ;
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|count        ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0              ;
-; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0              ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|Selector0               ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                   ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+-----------------------------------------------------------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                               ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                     ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
+; 3:1                ; 40 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst16|ledBufferAutoInc[22]   ;
+; 3:1                ; 99 bits   ; 198 LEs       ; 99 LEs               ; 99 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC_stack[8][6]                        ;
+; 4:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst16|led_buffer[0]          ;
+; 4:1                ; 88 bits   ; 176 LEs       ; 176 LEs              ; 0 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst16|led_buffer[117]        ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst16|ledBufferAutoInc[74]   ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst16|ledBufferAutoInc[85]   ;
+; 5:1                ; 12 bits   ; 36 LEs        ; 36 LEs               ; 0 LEs                  ; Yes        ; |SCOMP_System|NeoPixelController:inst16|ledBufferAutoInc[102]  ;
+; 6:1                ; 12 bits   ; 48 LEs        ; 36 LEs               ; 12 LEs                 ; Yes        ; |SCOMP_System|NeoPixelController:inst16|ledBufferAutoInc[110]  ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 0 LEs                ; 32 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|addr_rw[0]  ;
+; 7:1                ; 8 bits    ; 32 LEs        ; 8 LEs                ; 24 LEs                 ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|tx_byte[0]  ;
+; 11:1               ; 11 bits   ; 77 LEs        ; 22 LEs               ; 55 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|PC[10]                                ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 3 LEs                ; 3 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|bit_cnt[0]  ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[8] ;
+; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; Yes        ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_ctrl:inst14|data_out[1] ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 96 LEs               ; 32 LEs                 ; Yes        ; |SCOMP_System|SCOMP:inst|AC[12]                                ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|enc_count              ;
+; 3:1                ; 7 bits    ; 14 LEs        ; 14 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|bit_count              ;
+; 3:1                ; 13 bits   ; 26 LEs        ; 26 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|reset_count            ;
+; 3:1                ; 11 bits   ; 22 LEs        ; 22 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|reset_count            ;
+; 3:1                ; 40 bits   ; 80 LEs        ; 40 LEs               ; 40 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0             ;
+; 3:1                ; 56 bits   ; 112 LEs       ; 56 LEs               ; 56 LEs                 ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0             ;
+; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|I2C_INTERFACE:inst14|i2c_master:inst|count       ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0             ;
+; 4:1                ; 16 bits   ; 32 LEs        ; 32 LEs               ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|ShiftLeft0             ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |SCOMP_System|NeoPixelController:inst16|Selector0              ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 64 LEs               ; 64 LEs                 ; No         ; |SCOMP_System|SCOMP:inst|Add1                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------+
@@ -1083,29 +1220,30 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
 ; boundary_port         ; 69                          ;
-; cycloneiii_ff         ; 857                         ;
+; cycloneiii_ff         ; 999                         ;
 ;     CLR               ; 168                         ;
-;     ENA               ; 326                         ;
-;     ENA CLR           ; 11                          ;
-;     ENA SLD           ; 120                         ;
+;     ENA               ; 412                         ;
+;     ENA CLR           ; 64                          ;
+;     ENA SCLR SLD      ; 35                          ;
+;     ENA SLD           ; 88                          ;
 ;     SCLR              ; 24                          ;
 ;     plain             ; 208                         ;
 ; cycloneiii_io_obuf    ; 2                           ;
-; cycloneiii_lcell_comb ; 1491                        ;
-;     arith             ; 107                         ;
-;         2 data inputs ; 70                          ;
+; cycloneiii_lcell_comb ; 1909                        ;
+;     arith             ; 158                         ;
+;         2 data inputs ; 121                         ;
 ;         3 data inputs ; 37                          ;
-;     normal            ; 1384                        ;
+;     normal            ; 1751                        ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 15                          ;
-;         2 data inputs ; 172                         ;
-;         3 data inputs ; 336                         ;
-;         4 data inputs ; 859                         ;
+;         1 data inputs ; 17                          ;
+;         2 data inputs ; 73                          ;
+;         3 data inputs ; 571                         ;
+;         4 data inputs ; 1088                        ;
 ; cycloneiii_pll        ; 1                           ;
 ; cycloneiii_ram_block  ; 16                          ;
 ;                       ;                             ;
 ; Max LUT depth         ; 13.50                       ;
-; Average LUT depth     ; 5.46                        ;
+; Average LUT depth     ; 5.43                        ;
 +-----------------------+-----------------------------+
 
 
@@ -1114,7 +1252,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:03     ;
+; Top            ; 00:00:09     ;
 +----------------+--------------+
 
 
@@ -1124,7 +1262,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Tue Nov 30 20:45:56 2021
+    Info: Processing started: Tue Nov 30 21:15:58 2021
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
 Warning (12473): User specified to use only one processors but 4 processors were detected which could be used to decrease run time.
 Info (12021): Found 2 design units, including 1 entities, in source file i2c_master.vhd
@@ -1389,22 +1527,30 @@ Critical Warning (18061): Ignored Power-Up Level option on the following registe
     Critical Warning (18010): Register NeoPixelController:inst16|bit_count[1] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 78
     Critical Warning (18010): Register NeoPixelController:inst16|bit_count[5] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 78
     Critical Warning (18010): Register NeoPixelController:inst16|bit_count[4] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 78
-Info (17049): 175 registers lost all their fanouts during netlist optimizations.
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[23] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[20] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[19] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[15] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[12] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[10] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[9] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+    Critical Warning (18010): Register NeoPixelController:inst16|shift_count[7] will power up to High File: C:/Users/emrai/Documents/GitHub/ECE2031_NeoPixel_Group2_L07/SCOMP_Project_fall21/NeoPixelController.vhd Line: 252
+Info (17049): 1 registers lost all their fanouts during netlist optimizations.
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 1 node(s), including 0 DDIO, 1 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 1 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY1"
-Info (21057): Implemented 1918 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2388 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 13 input pins
     Info (21059): Implemented 54 output pins
     Info (21060): Implemented 2 bidirectional pins
-    Info (21061): Implemented 1832 logic cells
+    Info (21061): Implemented 2302 logic cells
     Info (21064): Implemented 16 RAM segments
     Info (21065): Implemented 1 PLLs
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 48 warnings
-    Info: Peak virtual memory: 4811 megabytes
-    Info: Processing ended: Tue Nov 30 20:46:08 2021
-    Info: Elapsed time: 00:00:12
-    Info: Total CPU time (on all processors): 00:00:24
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 56 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Tue Nov 30 21:16:38 2021
+    Info: Elapsed time: 00:00:40
+    Info: Total CPU time (on all processors): 00:01:35
 
 
