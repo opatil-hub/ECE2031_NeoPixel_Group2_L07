@@ -25,6 +25,9 @@ SingleOrAll:
 	IN Switches
 	AND EightSwitch
 	JPOS NeoPixel_Single
+	In Switches
+	AND SevenSwitch
+	JPos AutoInc
 	JUMP NeoPixel_All
 	;JUMP Start
 NeoPixel16Block:
@@ -83,11 +86,20 @@ NeoPixelSingleExecuteBlock:
 	Load count
 	OUT NeoPixelSingleExecute
 	JUMP Start
+	
+AutoInc:
+IncLoop:
+	IN Switches
+	AND SevenSwitch
+	OUT NeoPixelAutoInc
+	JPOS IncLoop
+	JUMP Start
+
 NeoPixel_All:
 	; Do NOT call OUT NeoPixelSingle, the enable signal must remain 0 as we are not attempting to manipulate a specific signal
 	OUT NeoPixelSingle
 	JUMP  Start	
-	
+
 	
 
 	
@@ -98,6 +110,16 @@ WaitingLoop:
 	ADDI   -10
 	JNeG   WaitingLoop
 	RETURN
+	
+Delay2:
+	OUT    Timer
+WaitingLoop2:
+	IN     Timer
+	ADDI   -1
+	JNeG   WaitingLoop2
+	RETURN
+
+
 
 OutColor:  DW 0
 RedMask:   DW &B100
@@ -125,3 +147,5 @@ NeoPixelG:  EQU &H0A3
 NeoPixelR:  EQU &H0A4
 NeoPixelSingle:  EQU &H0A2
 NeoPixelSingleExecute: EQU &H0A5
+NeoPixelAutoInc: EQU &H0A6
+NeoPixelAutoIncEnd: EQU &H0A7

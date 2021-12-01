@@ -11,76 +11,86 @@ CONTENT
     [000..7FF] : 0000;  -- Default to NOP
 
            000 : BFFE;  -- loadi -2
-           001 : 1048;  -- store count
+           001 : 1052;  -- store count
            002 : B800;  -- 	LOADI 0
-           003 : 103E;  -- 	STORE OutColor
+           003 : 1048;  -- 	STORE OutColor
            004 : 9000;  -- 	IN Switches
-           005 : 4845;  -- 	AND NineSwitch
-           006 : 380C;  -- 	JPOS NeoPixel16Block
-           007 : 281E;  -- 	JUMP NeoPixel24
+           005 : 484F;  -- 	AND NineSwitch
+           006 : 380F;  -- 	JPOS NeoPixel16Block
+           007 : 2821;  -- 	JUMP NeoPixel24
            008 : 9000;  -- 	IN Switches
-           009 : 4846;  -- 	AND EightSwitch
-           00A : 382B;  -- 	JPOS NeoPixel_Single
-           00B : 2837;  -- 	JUMP NeoPixel_All
-           00C : 9000;  -- 	IN Switches
-           00D : 483F;  -- 	AND RedMask
-           00E : 600D;  -- 	SHIFT 13
-           00F : 503E;  -- 	OR OutColor
-           010 : 103E;  -- 	STORE OutColor
-           011 : 9000;  -- 	IN Switches
-           012 : 4841;  -- 	AND GreenMask
-           013 : 6009;  -- 	SHIFT 9
-           014 : 503E;  -- 	OR OutColor
-           015 : 103E;  -- 	STORE OutColor
-           016 : 9000;  -- 	IN Switches
-           017 : 4843;  -- 	AND BlueMask
-           018 : 6004;  -- 	SHIFT 4
-           019 : 503E;  -- 	OR OutColor
-           01A : 103E;  -- 	STORE OutColor
-           01B : 083E;  -- 	LOAD OutColor
-           01C : 98A0;  -- 	OUT NeoPixel16
-           01D : 2808;  -- 	JUMP SingleOrAll
-           01E : 9000;  -- 	IN    Switches
-           01F : 483F;  -- 	AND   RedMask
-           020 : 6005;  -- 	SHIFT 5
-           021 : 98A4;  -- 	OUT NeoPixelR
-           022 : 9000;  -- 	IN Switches
-           023 : 4841;  -- 	AND GreenMask
-           024 : 6006;  -- 	SHIFT 6
-           025 : 98A3;  -- 	OUT NeoPixelG
-           026 : 9000;  -- 	IN Switches
-           027 : 4843;  -- 	AND BlueMask
-           028 : 6007;  -- 	SHIFT 7
-           029 : 98A1;  -- 	OUT NeoPixelB
-           02A : 2808;  -- 	JUMP SingleOrAll
-           02B : 8039;  -- 	call delay
-           02C : 0848;  -- 	load count
-           02D : 6801;  -- 	addi 1
-           02E : 1048;  -- 	store count
-           02F : 9804;  -- 	out Hex0
-           030 : 9000;  -- 	IN Switches
-           031 : 4846;  -- 	AND EightSwitch
-           032 : 4034;  -- 	Jzero NeoPixelSingleExecuteBlock
-           033 : 282B;  -- 	Jump NeoPixel_Single
-           034 : 0848;  -- 	Load count
-           035 : 98A5;  -- 	OUT NeoPixelSingleExecute
-           036 : 2802;  -- 	JUMP Start
-           037 : 98A2;  -- 	OUT NeoPixelSingle
-           038 : 2802;  -- 	JUMP  Start	
-           039 : 9802;  -- 	OUT    Timer
-           03A : 9002;  -- 	IN     Timer
-           03B : 6FF6;  -- 	ADDI   -10
-           03C : 303A;  -- 	JNeG   WaitingLoop
-           03D : 8800;  -- 	RETURN
-           03E : 0000;  -- OutColor:  DW 0
-           03F : 0004;  -- RedMask:   DW &B100
-           040 : 0006;  -- RedAdditional: DW &B110
-           041 : 0002;  -- GreenMask: DW &B010
-           042 : 0003;  -- GreenAdditional: DW &B011
-           043 : 0001;  -- BlueMask:  DW &B001
-           044 : 0003;  -- BlueAdditional: DW &B011
-           045 : 0200;  -- NineSwitch: DW &B1000000000
-           046 : 0100;  -- EightSwitch: DW &B0100000000
-           047 : 0080;  -- SevenSwitch: DW &B0010000000
-           048 : FFFE;  -- count: DW -2
+           009 : 4850;  -- 	AND EightSwitch
+           00A : 382E;  -- 	JPOS NeoPixel_Single
+           00B : 9000;  -- 	In Switches
+           00C : 4851;  -- 	AND SevenSwitch
+           00D : 383A;  -- 	JPos AutoInc
+           00E : 2841;  -- 	JUMP NeoPixel_All
+           00F : 9000;  -- 	IN Switches
+           010 : 4849;  -- 	AND RedMask
+           011 : 600D;  -- 	SHIFT 13
+           012 : 5048;  -- 	OR OutColor
+           013 : 1048;  -- 	STORE OutColor
+           014 : 9000;  -- 	IN Switches
+           015 : 484B;  -- 	AND GreenMask
+           016 : 6009;  -- 	SHIFT 9
+           017 : 5048;  -- 	OR OutColor
+           018 : 1048;  -- 	STORE OutColor
+           019 : 9000;  -- 	IN Switches
+           01A : 484D;  -- 	AND BlueMask
+           01B : 6004;  -- 	SHIFT 4
+           01C : 5048;  -- 	OR OutColor
+           01D : 1048;  -- 	STORE OutColor
+           01E : 0848;  -- 	LOAD OutColor
+           01F : 98A0;  -- 	OUT NeoPixel16
+           020 : 2808;  -- 	JUMP SingleOrAll
+           021 : 9000;  -- 	IN    Switches
+           022 : 4849;  -- 	AND   RedMask
+           023 : 6005;  -- 	SHIFT 5
+           024 : 98A4;  -- 	OUT NeoPixelR
+           025 : 9000;  -- 	IN Switches
+           026 : 484B;  -- 	AND GreenMask
+           027 : 6006;  -- 	SHIFT 6
+           028 : 98A3;  -- 	OUT NeoPixelG
+           029 : 9000;  -- 	IN Switches
+           02A : 484D;  -- 	AND BlueMask
+           02B : 6007;  -- 	SHIFT 7
+           02C : 98A1;  -- 	OUT NeoPixelB
+           02D : 2808;  -- 	JUMP SingleOrAll
+           02E : 8043;  -- 	call delay
+           02F : 0852;  -- 	load count
+           030 : 6801;  -- 	addi 1
+           031 : 1052;  -- 	store count
+           032 : 9804;  -- 	out Hex0
+           033 : 9000;  -- 	IN Switches
+           034 : 4850;  -- 	AND EightSwitch
+           035 : 4037;  -- 	Jzero NeoPixelSingleExecuteBlock
+           036 : 282E;  -- 	Jump NeoPixel_Single
+           037 : 0852;  -- 	Load count
+           038 : 98A5;  -- 	OUT NeoPixelSingleExecute
+           039 : 2802;  -- 	JUMP Start
+           03A : 98A6;  -- 	OUT NeoPixelAutoInc
+           03B : 9000;  -- 	IN Switches
+           03C : 4851;  -- 	AND SevenSwitch
+           03D : 98A6;  -- 	OUT NeoPixelAutoInc
+           03E : 8043;  -- 	call Delay
+           03F : 383B;  -- 	JPOS IncLoop
+           040 : 2802;  -- 	JUMP Start
+           041 : 98A2;  -- 	OUT NeoPixelSingle
+           042 : 2802;  -- 	JUMP  Start	
+           043 : 9802;  -- 	OUT    Timer
+           044 : 9002;  -- 	IN     Timer
+           045 : 6FF6;  -- 	ADDI   -10
+           046 : 3044;  -- 	JNeG   WaitingLoop
+           047 : 8800;  -- 	RETURN
+           048 : 0000;  -- OutColor:  DW 0
+           049 : 0004;  -- RedMask:   DW &B100
+           04A : 0006;  -- RedAdditional: DW &B110
+           04B : 0002;  -- GreenMask: DW &B010
+           04C : 0003;  -- GreenAdditional: DW &B011
+           04D : 0001;  -- BlueMask:  DW &B001
+           04E : 0003;  -- BlueAdditional: DW &B011
+           04F : 0200;  -- NineSwitch: DW &B1000000000
+           050 : 0100;  -- EightSwitch: DW &B0100000000
+           051 : 0080;  -- SevenSwitch: DW &B0010000000
+           052 : FFFE;  -- count: DW -2
   END;

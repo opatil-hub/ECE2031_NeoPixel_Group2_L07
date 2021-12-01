@@ -40,18 +40,21 @@ architecture internals of NeoPixelController is
 	signal led_Gcolor : std_logic_vector(7 downto 0) := (others => '0');
 	signal led_Rcolor : std_logic_vector(7 downto 0) := (others => '0');
 	
-	signal led_buffer : unsigned(6144 downto 0) := (others => '0');
+	signal led_buffer : unsigned(119 downto 0) := (others => '0');
 	--signal led_hold : unsigned(6144 downto 0) := (others => '0');
 	
 	type state_type is (ledsingle, ledall, ledincrement);
-	signal state : state_type;
+	signal state : state_type := ledall;
 	
 	signal shift_amount_int :integer;
 	shared variable Colorsize : bit :='0';
-	shared variable ledBufferSingle : unsigned(6144 downto 0);
-	shared variable ledBufferAll : unsigned(6144 downto 0);
-	shared variable ledBufferAutoInc : unsigned(6144 downto 0);
+	shared variable ledBufferSingle : unsigned(119 downto 0);
+	shared variable ledBufferAll : unsigned(119 downto 0);
+	shared variable ledBufferAutoInc : unsigned(119 downto 0);
 	shared variable singleOrAll : bit := '0';
+	shared variable shift_amount_int2: integer := 0;
+	shared variable autoin : bit := '0';
+	
 	
 	
 begin
@@ -64,7 +67,7 @@ begin
 		constant t0l : integer := 9;
 
 		-- which bit in the 24 bits is being sent
-		variable bit_count   : integer range 0 to 6144;
+		variable bit_count   : integer range 0 to 119;
 		-- counter to count through the bit encoding
 		variable enc_count   : integer range 0 to 31;
 		-- counter for the reset pulse
@@ -74,7 +77,7 @@ begin
 	begin
 		if resetn = '0' then
 			-- reset all counters
-			bit_count := 6144;
+			bit_count := 119;
 			enc_count := 0;
 			reset_count := 10000000;
 			-- set sda inactive
@@ -85,7 +88,7 @@ begin
 			-- This IF block controls the various counters
 			if reset_count > 0 then
 				-- during reset period, ensure other counters are reset
-				bit_count := 6144;
+				bit_count := 119;
 				enc_count := 0;
 				-- decrement the reset count
 				reset_count := reset_count - 1;
@@ -138,18 +141,19 @@ begin
 			
 			case state is
 				when ledall =>
+					autoin := '0';
 					if latchsingle = '1' then
 						state <= ledsingle;
 					elsif latchautoinc = '1' then
 						state <= ledincrement;
 					end if;
 				when ledsingle =>
-					if latchall = '1' then
-						state <= ledall;
-					elsif latchautoinc = '1' then
+					autoin := '0';
+					if latchautoinc = '1' then
 						state <= ledincrement;
 					end if;
 				when ledincrement =>
+					autoin := '1';
 					if latchsingle = '1' then
 						state <= ledsingle;
 					else
@@ -157,6 +161,24 @@ begin
 					end if;
 			end case;
 			
+--			case state is
+--				when ledall =>
+--					led_buffer <= ledBufferSingle;
+--				when ledsingle =>
+--					led_buffer <= ledBufferAll;
+--				when ledincrement =>
+--					led_buffer <= ledBufferAutoInc;
+--			end case;
+			
+			if state = ledsingle then
+				led_buffer <= ledBufferSingle;
+			elsif state = ledall then
+				led_buffer <= ledBufferAll;
+			elsif state = ledincrement then
+				autoin := '1';
+				led_buffer <= ledBufferAutoInc;
+			end if;
+		
 --			if singleOrAll = '1' then
 --				led_buffer <= ledBufferSingle;
 --			else
@@ -164,18 +186,6 @@ begin
 --			end if;
 			
 		end if;
-	end process;
-	
-	process(state)
-	begin
-		case state is
-			when ledall =>
-				led_buffer <= ledBufferSingle;
-			when ledsingle =>
-				led_buffer <= ledBufferAll;
-			when ledincrement =>
-				led_buffer <= ledBufferAutoInc;
-		end case;
 	end process;
 	
 	-- Process to handle OUTs from SCOMP
@@ -195,8 +205,8 @@ begin
 	-- NeoPixel Strip
 	
 	process(latchsingle, resetn)
-	variable ledHolder : unsigned(6144 downto 0);
-	constant shiftNum : integer := shift_amount_int;
+	variable ledHolder : unsigned(119 downto 0);
+	--constant shiftNum : integer := shift_amount_int;
 	begin
 		if resetn = '0' then
 			singleOrAll := '0';
@@ -214,6 +224,7 @@ begin
 			--end loop;
 			--led_hold <= shift_left(led_hold, shift_amount_int);
 			ledHolder := shift_left(ledHolder, shift_amount_int);
+			
 			ledBufferSingle := led_buffer xor ledHolder;
 			ledBufferSingle := ledBufferSingle or ledHolder;
 			singleOrAll := '1';
@@ -231,6 +242,39 @@ begin
 			end if;
 		end if;
 	end process;
+	
+	process(latchautoinc, resetn)
+	variable shift_count   : integer range 0 to 10000000;
+	variable ledHolder2 : unsigned(119 downto 0);
+	constant shiftNum : integer := shift_amount_int2;
+	begin
+		if (autoin = '1') then
+			if resetn = '0' then
+				shift_count := 10000000;
+			elsif(shift_amount_int2=6120) then
+				shift_amount_int2:=0;
+			elsif (rising_edge(clk_10M)) then
+	
+				-- This IF block controls the various counters
+				if shift_count > 0 then
+					shift_count := shift_count - 1;
+				else
+					shift_amount_int2:=shift_amount_int2+24;
+					shift_count:= 10000000;
+					--ledHolder2 := (others => '0');
+					ledHolder2 := ledHolder2 or unsigned(led_16color);
+					ledHolder2 := shift_left(ledHolder2, shift_amount_int2);
+--					for k in 0 to shiftNum loop
+--						ledHolder2 := shift_left(ledHolder2, 1);						
+--					end loop;
+					--ledBufferAutoInc := (others => '0');
+					--ledBufferAutoInc := led_buffer xor ledHolder2;
+					ledBufferAutoInc := ledBufferAutoInc or ledHolder2;
+				end if;
+			end if;
+		end if;
+	end process;
+		
 	
 	process(latchB)
 	begin 

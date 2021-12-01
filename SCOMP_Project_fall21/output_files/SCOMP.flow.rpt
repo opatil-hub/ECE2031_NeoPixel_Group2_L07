@@ -1,5 +1,5 @@
 Flow report for SCOMP
-Tue Nov 30 16:05:08 2021
+Tue Nov 30 20:47:00 2021
 Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
 
 
@@ -41,24 +41,24 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------------------------------------------------------------+
 ; Flow Summary                                                                     ;
 +------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Tue Nov 30 16:05:08 2021       ;
+; Flow Status                        ; Successful - Tue Nov 30 20:47:00 2021       ;
 ; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
 ; Revision Name                      ; SCOMP                                       ;
 ; Top-level Entity Name              ; SCOMP_System                                ;
 ; Family                             ; MAX 10                                      ;
 ; Device                             ; 10M50DAF484C7G                              ;
 ; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 22,760                                      ;
-;     Total combinational functions  ; 22,575                                      ;
-;     Dedicated logic registers      ; 12,792                                      ;
-; Total registers                    ; 12792                                       ;
-; Total pins                         ; 69                                          ;
+; Total logic elements               ; 1,749 / 49,760 ( 4 % )                      ;
+;     Total combinational functions  ; 1,489 / 49,760 ( 3 % )                      ;
+;     Dedicated logic registers      ; 857 / 49,760 ( 2 % )                        ;
+; Total registers                    ; 857                                         ;
+; Total pins                         ; 69 / 360 ( 19 % )                           ;
 ; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 32,768                                      ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 1                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
+; Total memory bits                  ; 32,768 / 1,677,312 ( 2 % )                  ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
+; Total PLLs                         ; 1 / 4 ( 25 % )                              ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
 +------------------------------------+---------------------------------------------+
 
 
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/30/2021 16:02:46 ;
+; Start date & time ; 11/30/2021 20:45:57 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; SCOMP               ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+--------------------+--------------+-----------------------------------+
 ; Assignment Name                     ; Value                                  ; Default Value      ; Entity Name  ; Section Id                        ;
 +-------------------------------------+----------------------------------------+--------------------+--------------+-----------------------------------+
-; COMPILER_SIGNATURE_ID               ; 92384130199876.163830616618864         ; --                 ; --           ; --                                ;
+; COMPILER_SIGNATURE_ID               ; 154537903120722.163832315725096        ; --                 ; --           ; --                                ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --           ; eda_board_design_timing           ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --           ; eda_board_design_boundary_scan    ;
 ; EDA_GENERATE_FUNCTIONAL_NETLIST     ; Off                                    ; --                 ; --           ; eda_board_design_signal_integrity ;
@@ -92,7 +92,7 @@ https://fpgasoftware.intel.com/eula.
 ; MISC_FILE                           ; PLL_main.bsf                           ; --                 ; --           ; --                                ;
 ; MISC_FILE                           ; PLL_main.cmp                           ; --                 ; --           ; --                                ;
 ; MISC_FILE                           ; PLL_main.ppf                           ; --                 ; --           ; --                                ;
-; NUM_PARALLEL_PROCESSORS             ; All                                    ; --                 ; --           ; --                                ;
+; NUM_PARALLEL_PROCESSORS             ; 1                                      ; --                 ; --           ; --                                ;
 ; OPTIMIZE_POWER_DURING_FITTING       ; Off                                    ; Normal compilation ; --           ; --                                ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --                 ; --           ; --                                ;
 ; OUTPUT_IO_TIMING_FAR_END_VMEAS      ; Half Signal Swing                      ; --                 ; --           ; --                                ;
@@ -114,8 +114,12 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:02:18     ; 1.0                     ; 5880 MB             ; 00:02:33                           ;
-; Total                ; 00:02:18     ; --                      ; --                  ; 00:02:33                           ;
+; Analysis & Synthesis ; 00:00:12     ; 1.0                     ; 4811 MB             ; 00:00:24                           ;
+; Fitter               ; 00:00:37     ; 1.0                     ; 5261 MB             ; 00:00:38                           ;
+; Assembler            ; 00:00:03     ; 1.0                     ; 4698 MB             ; 00:00:03                           ;
+; Timing Analyzer      ; 00:00:07     ; 1.0                     ; 4809 MB             ; 00:00:06                           ;
+; EDA Netlist Writer   ; 00:00:01     ; 1.0                     ; 4664 MB             ; 00:00:01                           ;
+; Total                ; 00:01:00     ; --                      ; --                  ; 00:01:12                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -124,7 +128,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; DESKTOP-O8C379M  ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-SBGKDFE  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-SBGKDFE  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-SBGKDFE  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-SBGKDFE  ; Windows 10 ; 10.0       ; x86_64         ;
+; EDA Netlist Writer   ; DESKTOP-SBGKDFE  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
@@ -132,6 +140,10 @@ https://fpgasoftware.intel.com/eula.
 ; Flow Log ;
 ------------
 quartus_map --read_settings_files=on --write_settings_files=off SCOMP -c SCOMP
+quartus_fit --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
+quartus_asm --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
+quartus_sta SCOMP -c SCOMP
+quartus_eda --read_settings_files=off --write_settings_files=off SCOMP -c SCOMP
 
 
 
